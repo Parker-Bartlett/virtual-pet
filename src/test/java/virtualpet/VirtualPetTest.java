@@ -2,7 +2,6 @@ package virtualpet;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-//import org.wecancodeit.VirtualPet;
 
 public class VirtualPetTest {
 
