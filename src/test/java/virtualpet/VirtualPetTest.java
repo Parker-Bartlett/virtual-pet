@@ -66,15 +66,7 @@ public class VirtualPetTest {
 	    }
 }
 	
-//	    
-//	    @Test
-//	    public void shouldHaveFiveHunger() {
-//	        VirtualPet underTest = new VirtualPet("Steve");
-//
-//	        int expected = underTest.getHunger();
-//
-//	        assertEquals(expected, 5);
-//	    }
-//	    
+//test	    
+
 	
 
