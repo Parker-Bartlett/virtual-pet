@@ -47,6 +47,11 @@ public class VirtualPet {
 	public int getHealth() {
 		return health;
 	}
+	
+	public String printStats() {
+		String status= "Hunger:" +hunger+ " Thirst:" +thirst+ " Boredom:" +boredom+ " Cleanliness:" +cleanliness+ "\n                 Health:" +health;
+		return status;
+	}
 
 	public int play() {
 		boredom += 5;
