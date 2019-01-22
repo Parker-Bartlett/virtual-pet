@@ -41,12 +41,12 @@ public class VirtualPet {
 		return cleanliness;
 	}
 
-	public int getPlay() {
+	public int play() {
 		boredom += 5;
 		return boredom + 5;
 	}
 
-	public int getFeed() {
+	public int feed() {
 		hunger += 5;
 		return hunger + 5;
 	}

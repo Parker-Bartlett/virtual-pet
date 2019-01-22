@@ -19,7 +19,7 @@ public class Application {
 			System.out.println(pet.getBoredom() +" "+  pet.getHunger() + " " +  pet.getThirst() + " " +  pet.getCleanliness());
 		
 		input.close();
-		}
+		} 
 	
 	
 }
