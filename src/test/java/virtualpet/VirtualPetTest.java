@@ -2,7 +2,6 @@ package virtualpet;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-//import org.wecancodeit.VirtualPet;
 
 public class VirtualPetTest {
 
@@ -37,7 +36,36 @@ public class VirtualPetTest {
 		int expected = underTest.getHunger();
 
 		assertEquals(expected, 10);
-//	    }
+	    }
+
+	@Test
+	public void shouldHaveDefaultBored() {
+		VirtualPet underTest = new VirtualPet("Steve");
+
+		int expected = underTest.getBoredom();
+
+		assertEquals(expected, 10);
+	    }
+	
+	@Test
+	public void shouldHavePlayMethodReturnBoredomPlusFive() {
+		VirtualPet underTest = new VirtualPet("Steve");
+
+		int expected = underTest.play();
+
+		assertEquals(expected, underTest.getBoredom() + 5);
+	    }
+	
+	@Test
+	public void shouldHaveFeedMethodReturnHungerPlusFive() {
+		VirtualPet underTest = new VirtualPet("Steve");
+
+		int expected = underTest.feed();
+
+		assertEquals(expected, underTest.getHunger() + 5);
+	    }
+}
+	
 //	    
 //	    @Test
 //	    public void shouldHaveFiveHunger() {
@@ -48,5 +76,5 @@ public class VirtualPetTest {
 //	        assertEquals(expected, 5);
 //	    }
 //	    
-	}
-}
+	
+
