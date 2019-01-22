@@ -36,7 +36,7 @@ public class VirtualPetTest {
 		int expected = underTest.getHunger();
 
 		assertEquals(expected, 10);
-	    }
+	}
 
 	@Test
 	public void shouldHaveDefaultBored() {
@@ -45,8 +45,8 @@ public class VirtualPetTest {
 		int expected = underTest.getBoredom();
 
 		assertEquals(expected, 10);
-	    }
-	
+	}
+
 	@Test
 	public void shouldHavePlayMethodReturnBoredomPlusFive() {
 		VirtualPet underTest = new VirtualPet("Steve");
@@ -54,8 +54,8 @@ public class VirtualPetTest {
 		int expected = underTest.play();
 
 		assertEquals(expected, underTest.getBoredom() + 5);
-	    }
-	
+	}
+
 	@Test
 	public void shouldHaveFeedMethodReturnHungerPlusFive() {
 		VirtualPet underTest = new VirtualPet("Steve");
@@ -63,61 +63,67 @@ public class VirtualPetTest {
 		int expected = underTest.feed();
 
 		assertEquals(expected, underTest.getHunger() + 5);
-	    }
-	 @Test
-	    public void shouldHaveDefaultThirst() {
-	        VirtualPet underTest = new VirtualPet("Steve");
+	}
 
-	        int expected = underTest.getThirst();
+	@Test
+	public void shouldHaveDefaultThirst() {
+		VirtualPet underTest = new VirtualPet("Steve");
 
-	        assertEquals(expected, 10);
-	    }
+		int expected = underTest.getThirst();
 
-	  @Test
-	    public void tickShouldDecreaseByOne() {
-	        VirtualPet underTest = new VirtualPet("Steve");
-	        underTest.tick();
+		assertEquals(expected, 10);
+	}
 
-	       // int expected = underTest..getThirst().tick().getThirst()));
+	@Test
+	public void tickShouldDecreaseByOne() {
+		VirtualPet underTest = new VirtualPet("Steve");
+		underTest.tick();
 
-	        assertEquals(underTest.getThirst(), 9);
-	    }
-	  
-	  @Test
-	    public void tickShouldDecreaseByTwo() {
-	        VirtualPet underTest = new VirtualPet("Steve");
-	        //Call tick twice so first variation decreases thirst from 10 to 9, then second variation decreases 9 to 8
-	        underTest.tick();
-	        underTest.tick();
+		assertEquals(underTest.getThirst(), 9);
 
-	       // int expected = underTest..getThirst().tick().getThirst()));
+	}
 
-	        assertEquals(underTest.getThirst(), 8);
-	    }
-	  
-	  @Test
-	    public void tickShouldNotMakeThirstGoNegative() {
-	        VirtualPet underTest = new VirtualPet("Steve");
-	        //Call tick twice so first variation decreases thirst from 10 to 9, then second variation decreases 9 to 8
-	        underTest.tick();
-	        underTest.tick();
-	        underTest.tick();
-	        underTest.tick();
-	        underTest.tick();
-	        underTest.tick();
-	        underTest.tick();
-	        underTest.tick();
-	        underTest.tick();
-	        underTest.tick();
-	        underTest.tick();
-	        	
-	       // int expected = underTest..getThirst().tick().getThirst()));
+	@Test
+	public void tickShouldDecreaseByTwo() {
+		VirtualPet underTest = new VirtualPet("Steve");
+		// Call tick twice so first variation decreases thirst from 10 to 9,
+		// then second variation decreases 9 to 8
+		underTest.tick();
+		underTest.tick();
 
-	        assertEquals(underTest.getThirst(), 0);
-	    }
+		// int expected = underTest..getThirst().tick().getThirst()));
+
+		assertEquals(underTest.getThirst(), 8);
+	}
+
+	// @Test
+	// public void tickShouldNotMakeThirstGoNegative() {
+	// VirtualPet underTest = new VirtualPet("Steve");
+	// // Call tick twice so first variation decreases thirst from 10 to 9,
+	// // then second variation decreases 9 to 8
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	//
+	// // int expected = underTest..getThirst().tick().getThirst()));
+	//
+	// assertEquals(underTest.getThirst(), 0);
+	// }
+
+	@Test
+	public void healthShouldReturnOneHundred() {
+		VirtualPet underTest = new VirtualPet("Steve");
+		int hp = underTest.getHealth();
+		assertEquals(hp, 100);
+
+	}
+
 }
-	
-    
-
-	
-

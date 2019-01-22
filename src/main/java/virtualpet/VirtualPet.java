@@ -12,6 +12,7 @@ public class VirtualPet {
 	int boredom;
 	int thirst;
 	int cleanliness;
+	int health;
 
 	public VirtualPet(String name) {
 		this.name = name;
@@ -19,6 +20,7 @@ public class VirtualPet {
 		this.thirst = 10;
 		this.boredom = 10;
 		this.cleanliness = 10;
+		this.health = 100;
 	}
 
 	public String getName() {
@@ -42,6 +44,10 @@ public class VirtualPet {
 		return cleanliness;
 	}
 
+	public int getHealth() {
+		return health;
+	}
+
 	public int play() {
 		boredom += 5;
 		return boredom + 5;
@@ -53,29 +59,36 @@ public class VirtualPet {
 	}
 
 	public void tick() {
-		if (thirst <= 0) {
-
-			System.out.println("Sorry your pet " + name + " died of Thirst");
-			System.exit(0);
-		}
+		String dm = "Sorry your pet " + name + " has lost 25 health points!";
 		thirst = thirst - 1;
-		if (hunger <= 0) {
-
-			System.out.println("Sorry your pet " + name + " died of hunger");
-			System.exit(0);
-		}
-		hunger = hunger - 1;
-		if (boredom <= 0) {
-
-			System.out.println("Sorry your pet " + name + " died of boredom");
-			System.exit(0);
-		}
 		boredom = boredom - 1;
+		hunger = hunger - 1;
+		cleanliness = cleanliness - 1;
+		
+		if (thirst <= 0) {
+			health -= 25;
+			System.out.println(dm);
+		}
+		
+		if (hunger <= 0) {
+			health -= 25;
+			System.out.println(dm);
+		}
+		
+		if (boredom <= 0) {
+			health -= 25;
+			System.out.println(dm);
+		}
+		
 		if (cleanliness <= 0) {
-
-			System.out.println("Sorry your pet " + name + " died of being too dirty");
+			health -= 25;	
+			System.out.println(dm);
+		}
+		
+		if (health <= 0) {
+			System.out.println("Sorry your pet " + name + " died!");
 			System.exit(0);
 		}
-		cleanliness = cleanliness - 1;
 	}
+
 }
