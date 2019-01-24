@@ -1,16 +1,13 @@
 package virtualpet;
 
 public class VirtualPet {
-	String petName;
-	
-
-
-	String name;
-	int hunger;
-	int boredom;
-	int thirst;
-	int cleanliness;
-	int health;
+	private String petName;
+	private String name;
+	private int hunger;
+	private int boredom;
+	private int thirst;
+	private int cleanliness;
+	private int health;
 
 	public VirtualPet(String name) {
 		this.name = name;
