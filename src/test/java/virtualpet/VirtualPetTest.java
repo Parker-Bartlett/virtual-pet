@@ -180,4 +180,25 @@ public class VirtualPetTest {
 		assertEquals(15, underTestCat.getHunger());
 		
 	}
+	
+	@Test
+	public void shouldCleanAllPets() {
+		//arrange
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet underTestDog = new VirtualPet("Booker");
+		VirtualPet underTestCat = new VirtualPet("Sam");
+		underTest.addPet(underTestDog);
+		underTest.addPet(underTestCat);
+		
+		
+		//act
+		underTest.cleanAll();
+		
+		
+		//assert
+		assertEquals(15, underTestDog.getCleanliness());
+		assertEquals(15, underTestCat.getCleanliness());
+		
+	}
+	
 }
