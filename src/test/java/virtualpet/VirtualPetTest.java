@@ -1,7 +1,13 @@
 package virtualpet;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
+
 import org.junit.Test;
+
+import junit.framework.Assert;
 
 public class VirtualPetTest {
 
@@ -36,7 +42,7 @@ public class VirtualPetTest {
 		int expected = underTest.getHunger();
 
 		assertEquals(expected, 10);
-	    }
+	}
 
 	@Test
 	public void shouldHaveDefaultBored() {
@@ -45,28 +51,193 @@ public class VirtualPetTest {
 		int expected = underTest.getBoredom();
 
 		assertEquals(expected, 10);
-	    }
-	
+	}
+
 	@Test
 	public void shouldHavePlayMethodReturnBoredomPlusFive() {
 		VirtualPet underTest = new VirtualPet("Steve");
 
-		int expected = underTest.play();
+		underTest.play();
 
-		assertEquals(expected, underTest.getBoredom() + 5);
-	    }
-	
+		assertEquals(15, underTest.getBoredom());
+	}
+
 	@Test
 	public void shouldHaveFeedMethodReturnHungerPlusFive() {
 		VirtualPet underTest = new VirtualPet("Steve");
 
-		int expected = underTest.feed();
+		underTest.feed();
 
-		assertEquals(expected, underTest.getHunger() + 5);
-	    }
+		assertEquals(15, underTest.getHunger());
+	}
+
+	@Test
+	public void shouldHaveDefaultThirst() {
+		VirtualPet underTest = new VirtualPet("Steve");
+
+		int expected = underTest.getThirst();
+
+		assertEquals(expected, 10);
+	}
+
+	@Test
+	public void tickShouldDecreaseByOne() {
+		VirtualPet underTest = new VirtualPet("Steve");
+		underTest.tick();
+
+		assertEquals(underTest.getThirst(), 9);
+
+	}
+
+	@Test
+	public void tickShouldDecreaseByTwo() {
+		VirtualPet underTest = new VirtualPet("Steve");
+		// Call tick twice so first variation decreases thirst from 10 to 9,
+		// then second variation decreases 9 to 8
+		underTest.tick();
+		underTest.tick();
+
+		// int expected = underTest..getThirst().tick().getThirst()));
+
+		assertEquals(underTest.getThirst(), 8);
+	}
+
+	// @Test
+	// public void tickShouldNotMakeThirstGoNegative() {
+	// VirtualPet underTest = new VirtualPet("Steve");
+	// // Call tick twice so first variation decreases thirst from 10 to 9,
+	// // then second variation decreases 9 to 8
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	// underTest.tick();
+	//
+	// // int expected = underTest..getThirst().tick().getThirst()));
+	//
+	// assertEquals(underTest.getThirst(), 0);
+	// }
+
+	@Test
+	public void healthShouldReturnOneHundred() {
+		VirtualPet underTest = new VirtualPet("Steve");
+		int hp = underTest.getHealth();
+		assertEquals(hp, 100);
+
+	}
+	@Test
+	public void letsGoToTheShelter() {
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		
+	}
+	
+	@Test
+	public void letsPutaDogInTheShelter() {
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		
+	}
+	@Test
+	public void returnListofanimals() {
+		//act
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet underTestDog = new VirtualPet("Booker");
+		underTest.addPet(underTestDog);
+		int size = underTest.getLength();
+		
+		//arrange
+		
+		
+		//assert
+		assertEquals(1, size);
+		
+		
+		
+		
+	}
+	
+	@Test
+	public void shouldFeedAllPets() {
+		//arrange
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet underTestDog = new VirtualPet("Booker");
+		VirtualPet underTestCat = new VirtualPet("Sam");
+		underTest.addPet(underTestDog);
+		underTest.addPet(underTestCat);
+		
+		
+		//act
+		underTest.feedAll();
+		
+		
+		//assert
+		assertEquals(15, underTestDog.getHunger());
+		assertEquals(15, underTestCat.getHunger());
+		
+	}
+	
+	@Test
+	public void shouldCleanAllPets() {
+		//arrange
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet underTestDog = new VirtualPet("Booker");
+		VirtualPet underTestCat = new VirtualPet("Sam");
+		underTest.addPet(underTestDog);
+		underTest.addPet(underTestCat);
+		
+		
+		//act
+		underTest.cleanAll();
+		
+		
+		//assert
+		assertEquals(15, underTestDog.getCleanliness());
+		assertEquals(15, underTestCat.getCleanliness());
+		
+	}
+	
+	@Test
+	public void shouldHydrateAllPets() {
+		//arrange
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet underTestDog = new VirtualPet("Booker");
+		VirtualPet underTestCat = new VirtualPet("Sam");
+		underTest.addPet(underTestDog);
+		underTest.addPet(underTestCat);
+		
+		
+		//act
+		underTest.hydrateAll();
+		
+		
+		//assert
+		assertEquals(15, underTestDog.getThirst());
+		assertEquals(15, underTestCat.getThirst());
+		
+	}
+	
+	@Test
+	public void shouldPlayWithAllPets() {
+		//arrange
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet underTestDog = new VirtualPet("Booker");
+		VirtualPet underTestCat = new VirtualPet("Sam");
+		underTest.addPet(underTestDog);
+		underTest.addPet(underTestCat);
+		
+		
+		//act
+		underTest.playAll();
+		
+		
+		//assert
+		assertEquals(15, underTestDog.getBoredom());
+		assertEquals(15, underTestCat.getBoredom());
+		
+	}
 }
-	
-//test	    
-
-	
-
