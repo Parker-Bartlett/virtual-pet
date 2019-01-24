@@ -57,18 +57,18 @@ public class VirtualPetTest {
 	public void shouldHavePlayMethodReturnBoredomPlusFive() {
 		VirtualPet underTest = new VirtualPet("Steve");
 
-		int expected = underTest.play();
+		underTest.play();
 
-		assertEquals(expected, underTest.getBoredom() + 5);
+		assertEquals(15, underTest.getBoredom());
 	}
 
 	@Test
 	public void shouldHaveFeedMethodReturnHungerPlusFive() {
 		VirtualPet underTest = new VirtualPet("Steve");
 
-		int expected = underTest.feed();
+		underTest.feed();
 
-		assertEquals(expected, underTest.getHunger() + 5);
+		assertEquals(15, underTest.getHunger());
 	}
 
 	@Test
@@ -160,5 +160,24 @@ public class VirtualPetTest {
 		
 		
 	}
-
+	
+	@Test
+	public void shouldFeedAllPets() {
+		//arrange
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet underTestDog = new VirtualPet("Booker");
+		VirtualPet underTestCat = new VirtualPet("Sam");
+		underTest.addPet(underTestDog);
+		underTest.addPet(underTestCat);
+		
+		
+		//act
+		underTest.feedAll();
+		
+		
+		//assert
+		assertEquals(15, underTestDog.getHunger());
+		assertEquals(15, underTestCat.getHunger());
+		
+	}
 }

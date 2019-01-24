@@ -53,12 +53,12 @@ public class VirtualPet {
 
 	public int play() {
 		boredom += 5;
-		return boredom + 5;
+		return boredom;
 	}
 
 	public int feed() {
-		hunger += 5;
-		return hunger + 5;
+		hunger +=5;
+		return hunger;
 	}
 
 	public void tick() {

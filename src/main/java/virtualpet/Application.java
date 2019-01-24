@@ -15,6 +15,8 @@ public class Application {
         //Intro and tutorial
         System.out.println(pet.printStats());
         
+        System.out.println("hunger " + pet.feed());
+        
         
 //        for (int i = 0; i < 11; i++) {
 //            pet.tick();
