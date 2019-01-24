@@ -65,6 +65,11 @@ public class VirtualPet {
 		cleanliness += 5;
 		return cleanliness;
 	}
+	
+	public int hydrate() {
+		thirst += 5;
+		return thirst;
+	}
 
 	public void tick() {
 		String dm = "Sorry your pet " + name + " has lost 25 health points!";

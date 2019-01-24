@@ -201,4 +201,43 @@ public class VirtualPetTest {
 		
 	}
 	
+	@Test
+	public void shouldHydrateAllPets() {
+		//arrange
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet underTestDog = new VirtualPet("Booker");
+		VirtualPet underTestCat = new VirtualPet("Sam");
+		underTest.addPet(underTestDog);
+		underTest.addPet(underTestCat);
+		
+		
+		//act
+		underTest.hydrateAll();
+		
+		
+		//assert
+		assertEquals(15, underTestDog.getThirst());
+		assertEquals(15, underTestCat.getThirst());
+		
+	}
+	
+	@Test
+	public void shouldPlayWithAllPets() {
+		//arrange
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet underTestDog = new VirtualPet("Booker");
+		VirtualPet underTestCat = new VirtualPet("Sam");
+		underTest.addPet(underTestDog);
+		underTest.addPet(underTestCat);
+		
+		
+		//act
+		underTest.playAll();
+		
+		
+		//assert
+		assertEquals(15, underTestDog.getBoredom());
+		assertEquals(15, underTestCat.getBoredom());
+		
+	}
 }

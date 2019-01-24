@@ -34,7 +34,20 @@ public class VirtualPetShelter {
 	
 	public void cleanAll() {
 		for (int i = 0; i < list.size(); i++) {
-			list.get(i).clean();		}
+			list.get(i).clean();		
+			}
+	}
+	
+	public void hydrateAll() {
+		for (int i = 0; i < list.size(); i++) {
+			list.get(i).hydrate();		
+			}
+	}
+	
+	public void playAll() {
+		for (int i = 0; i < list.size(); i++) {
+			list.get(i).play();		
+			}
 	}
 	
 }//close class
