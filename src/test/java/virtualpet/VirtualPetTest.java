@@ -1,7 +1,13 @@
 package virtualpet;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
+
 import org.junit.Test;
+
+import junit.framework.Assert;
 
 public class VirtualPetTest {
 
@@ -124,6 +130,35 @@ public class VirtualPetTest {
 		int hp = underTest.getHealth();
 		assertEquals(hp, 100);
 
+	}
+	@Test
+	public void letsGoToTheShelter() {
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		
+	}
+	
+	@Test
+	public void letsPutaDogInTheShelter() {
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		
+	}
+	@Test
+	public void returnListofanimals() {
+		//act
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet underTestDog = new VirtualPet("Booker");
+		underTest.addPet(underTestDog);
+		int size = underTest.getLength();
+		
+		//arrange
+		
+		
+		//assert
+		assertEquals(1, size);
+		
+		
+		
+		
 	}
 
 }
