@@ -6,7 +6,7 @@ public class Application {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("Welcome to <Pet Store Name>! \nWhat would you like to Name your pet?");
+		System.out.print("    Welcome to <Pet Store Name>! \nWhat would you like to Name your pet?");
 		String name = input.next();
 		VirtualPet pet = new VirtualPet(name);
 		System.out.println("Meet " + pet.getName() + "!");
@@ -38,7 +38,7 @@ public class Application {
 		// System.out.println(pet.getBoredom() +" "+ pet.getHunger() + " " +
 		// pet.getThirst() + " " + pet.getCleanliness());
 		//
-
+		
 		input.close();
 	}
 
