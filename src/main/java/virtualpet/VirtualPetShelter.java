@@ -1,10 +1,12 @@
 package virtualpet;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class VirtualPetShelter {
 	
-	private	ArrayList<VirtualPet> list = new ArrayList<VirtualPet>();
+	
+	
+	private	HashMap<String, VirtualPet> list = new HashMap<String, VirtualPet>();
 	
 	public VirtualPetShelter() {
 		
@@ -17,11 +19,15 @@ public class VirtualPetShelter {
 	 */
 	// Adds pet to the list
 	public void addPet(VirtualPet pet) {
-		list.add(pet);	
+		list.put(pet.getName(), pet);	
 		
-	}	
+	}
 	
-	// Return size of the array
+	public void removePet (VirtualPet pet) {
+		list.remove(pet.getName());
+	}
+	
+	// Return size of the HashMap
 	public int getLength() {
 		return list.size();
 	}
