@@ -14,12 +14,37 @@ public class Application {
 		System.out.println("To take a tour press 1. \nTo get started press 2.");
 		String choice = input.next();
 
+	
 		boolean foo = true;
 		while (foo) {
 			if (choice.equals("1")) {
-				foo = false;
 				
-				// enter tutorial
+				System.out.println("Welcome to the Shelter.  In order to keep your pets happy and healthy, you will need to care for your pet");
+				
+				System.out.println("Your pet is hungry! Feed it by pressing 1.");
+				String petAction = input.nextLine();
+				if (petAction.equals("1")) {
+					pet.feed();
+					}
+				System.out.print("Your pet is thursty! Hydrate it by pressing 2.");
+				petAction = input.nextLine();
+				if (petAction.equals("2")) {
+					pet.hydrate();
+					}
+				System.out.print("Your pet is board! Play with it by pressing 3.");
+				petAction = input.nextLine();
+				if (petAction.equals("3")) {
+					pet.play();
+					}
+				System.out.print("Your pet is dirty! Clean it by pressing 4.");
+				petAction = input.nextLine();
+				if (petAction.equals("4")) {
+					pet.clean();
+					}
+				
+				foo = false;
+				break;
+				
 			} else if (choice.equals("2")) {
 				foo = false;
 				break;
