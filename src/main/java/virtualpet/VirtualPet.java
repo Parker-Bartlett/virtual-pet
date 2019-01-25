@@ -1,7 +1,6 @@
 package virtualpet;
 
 public class VirtualPet {
-	private String petName;
 	private String name;
 	private int hunger;
 	private int boredom;
@@ -11,10 +10,10 @@ public class VirtualPet {
 
 	public VirtualPet(String name) {
 		this.name = name;
-		this.hunger = 10;
-		this.thirst = 10;
-		this.boredom = 10;
-		this.cleanliness = 10;
+		this.hunger = 25;
+		this.thirst = 25;
+		this.boredom = 25;
+		this.cleanliness = 25;
 		this.health = 100;
 	}
 
@@ -44,8 +43,8 @@ public class VirtualPet {
 	}
 	
 	public String printStats() {
-		String status= "Hunger:" +hunger+ " Thirst:" +thirst+ " Boredom:" +boredom+ " Cleanliness:" +cleanliness+ "\n                 Health:" +health;
-		return status;
+		String stats= name + ": \nHunger:" +hunger+ "\nThirst:" +thirst+ "\nBoredom:" +boredom+ "\nCleanliness:" +cleanliness+ "\nHealth:" +health;
+		return stats;
 	}
 
 	public int play() {
@@ -69,30 +68,30 @@ public class VirtualPet {
 	}
 
 	public void tick() {
-		String dm = "Sorry your pet " + name + " has lost 25 health points!";
-		thirst = thirst - 1;
-		boredom = boredom - 1;
-		hunger = hunger - 1;
-		cleanliness = cleanliness - 1;
+		String lostHp = "Sorry your pet " + name + " has lost 25 health points!";
+		thirst = thirst - 5;
+		boredom = boredom - 5;
+		hunger = hunger - 5;
+		cleanliness = cleanliness - 5;
 		
 		if (thirst <= 0) {
 			health -= 25;
-			System.out.println(dm);
+			System.out.println(lostHp);
 		}
 		
 		if (hunger <= 0) {
 			health -= 25;
-			System.out.println(dm);
+			System.out.println(lostHp);
 		}
 		
 		if (boredom <= 0) {
 			health -= 25;
-			System.out.println(dm);
+			System.out.println(lostHp);
 		}
 		
 		if (cleanliness <= 0) {
 			health -= 25;	
-			System.out.println(dm);
+			System.out.println(lostHp);
 		}
 		
 		if (health <= 0) {
