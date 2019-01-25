@@ -6,23 +6,24 @@ public class Application {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 
-		System.out.print("    Welcome to <Pet Store Name>! \nWhat would you like to Name your pet?");
-		String name = input.next();
+		System.out.println("    Welcome to <Pet Store Name>! \nWhat would you like to Name your pet?");
+		String name = input.nextLine();
 		VirtualPet pet = new VirtualPet(name);
 		System.out.println("Meet " + pet.getName() + "!");
 		
 		System.out.println("To take a tour press 1. \nTo get started press 2.");
-		String choice = input.next();
+		String choice = input.nextLine();
 
 	
 		boolean foo = true;
 		while (foo) {
 			if (choice.equals("1")) {
+				String petAction;
 				
 				System.out.println("Welcome to the Shelter.  In order to keep your pets happy and healthy, you will need to care for your pet");
 				
-				System.out.println("Your pet is hungry! Feed it by pressing 1.");
-				String petAction = input.nextLine();
+				System.out.print("Your pet is hungry! Feed it by pressing 1.");
+				petAction = input.nextLine();
 				if (petAction.equals("1")) {
 					pet.feed();
 					}
