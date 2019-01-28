@@ -23,6 +23,10 @@ public class VirtualPetShelter {
 		
 	}
 	
+	public VirtualPet getPet(String petToGet) {
+		return list.get(petToGet);
+	}
+	
 	public void removePet (VirtualPet pet) {
 		list.remove(pet.getName());
 	}
@@ -53,6 +57,13 @@ public class VirtualPetShelter {
 	public void playAll() {
 		for (VirtualPet pet : list.values()) {
 			pet.play();
+		}
+	}
+
+
+	public void listPets() {
+		for (VirtualPet pet : list.values()) {
+			System.out.println("Name: " +pet.getName());
 		}
 	}
 	

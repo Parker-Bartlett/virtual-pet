@@ -6,10 +6,21 @@ public class Application {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 
+		VirtualPetShelter shelter = new VirtualPetShelter();
+		VirtualPet testPetOne = new VirtualPet("BoBo");
+		shelter.addPet(testPetOne);
+		VirtualPet testPetTwo = new VirtualPet("FroDo");
+		shelter.addPet(testPetTwo);
+		VirtualPet testPetThree = new VirtualPet("ToDo");
+		shelter.addPet(testPetThree);
+		
+		
 		System.out.println("    Welcome to <Pet Store Name>! \nWhat would you like to Name your pet?");
 		String name = input.nextLine();
-		VirtualPet pet = new VirtualPet(name);
-		System.out.println("Meet " + pet.getName() + "!");
+		VirtualPet introPet = new VirtualPet(name);
+		shelter.addPet(introPet);
+		
+		System.out.println("Meet " + introPet.getName() + "!");
 
 		System.out.println("To take a tour press 1. \nTo get started press 2.");
 		String choice = input.nextLine();
@@ -18,7 +29,7 @@ public class Application {
 		while (foo) {
 			if (choice.equals("1")) {
 				String petAction;
-				pet.tick();
+				introPet.tick();
 
 				System.out.println(
 						"Welcome to the Shelter.  In order to keep your pets happy and healthy, you will need to care for your pet");
@@ -26,22 +37,22 @@ public class Application {
 				System.out.print("Your pet is hungry! Feed it by pressing 1.");
 				petAction = input.nextLine();
 				if (petAction.equals("1")) {
-					pet.feed();
+					introPet.feed();
 				}
 				System.out.print("Your pet is thursty! Hydrate it by pressing 2.");
 				petAction = input.nextLine();
 				if (petAction.equals("2")) {
-					pet.hydrate();
+					introPet.hydrate();
 				}
 				System.out.print("Your pet is board! Play with it by pressing 3.");
 				petAction = input.nextLine();
 				if (petAction.equals("3")) {
-					pet.play();
+					introPet.play();
 				}
 				System.out.print("Your pet is dirty! Clean it by pressing 4.");
 				petAction = input.nextLine();
 				if (petAction.equals("4")) {
-					pet.clean();
+					introPet.clean();
 				}
 
 				foo = false;
@@ -58,30 +69,33 @@ public class Application {
 
 		// Intro to Game
 		System.out.println("Congratulations you have a happy and healthy pet! Lets get started!");
-		System.out.println(pet.printStats());
-
+		System.out.println(introPet.printStats());
+		shelter.listPets();
+		System.out.println("Please choose a pet by their name.");
+		String petToGet = input.nextLine();
+		VirtualPet activePet = shelter.getPet(petToGet);
 		// Menu
 		boolean isAlive = true;
 		while (isAlive) {
 			System.out.println("1. Feed \n2. Hydrate \n3. Play \n4. Clean \n5. Check Status \n6. Exit");
 			String menuChoice = input.nextLine();
-			pet.tick();
+			activePet.tick();
 			
 			switch (menuChoice) {
 			case "1":
-				pet.feed();
+				activePet.feed();
 				break;
 			case "2":
-				pet.hydrate();
+				activePet.hydrate();
 				break;
 			case "3":
-				pet.play();
+				activePet.play();
 				break;
 			case "4":
-				pet.clean();
+				activePet.clean();
 				break;
 			case "5":
-				System.out.println(pet.printStats());
+				System.out.println(activePet.printStats());
 				break;
 			case "6":
 				System.exit(0);
