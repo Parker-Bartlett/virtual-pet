@@ -33,27 +33,27 @@ public class VirtualPetShelter {
 	}
 	
 	public void feedAll() {
-		for (int i = 0; i < list.size(); i++) {
-			list.get(i).feed();
+		for (VirtualPet pet : list.values()) {
+			pet.feed();
 		}
 	}
 	
 	public void cleanAll() {
-		for (int i = 0; i < list.size(); i++) {
-			list.get(i).clean();		
-			}
+		for (VirtualPet pet : list.values()) {
+			pet.clean();
+		}
 	}
 	
 	public void hydrateAll() {
-		for (int i = 0; i < list.size(); i++) {
-			list.get(i).hydrate();		
-			}
+		for (VirtualPet pet : list.values()) {
+			pet.hydrate();
+		}
 	}
 	
 	public void playAll() {
-		for (int i = 0; i < list.size(); i++) {
-			list.get(i).play();		
-			}
+		for (VirtualPet pet : list.values()) {
+			pet.play();
+		}
 	}
 	
 }//close class

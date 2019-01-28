@@ -69,10 +69,10 @@ public class VirtualPet {
 
 	public void tick() {
 		String lostHp = "Sorry your pet " + name + " has lost 25 health points!";
-		thirst = thirst - 5;
-		boredom = boredom - 5;
-		hunger = hunger - 5;
-		cleanliness = cleanliness - 5;
+		thirst = thirst - 1;
+		boredom = boredom - 1;
+		hunger = hunger - 1;
+		cleanliness = cleanliness - 1;
 		
 		if (thirst <= 0) {
 			health -= 25;
