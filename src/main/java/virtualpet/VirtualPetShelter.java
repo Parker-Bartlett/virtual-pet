@@ -59,11 +59,23 @@ public class VirtualPetShelter {
 			pet.play();
 		}
 	}
-
+	
+	public void tickAll() {
+		for (VirtualPet pet : list.values()) {
+			pet.tick();
+		}
+	}
 
 	public void listPets() {
 		for (VirtualPet pet : list.values()) {
 			System.out.println("Name: " +pet.getName());
+		}
+	}
+
+
+	public void statusOfAllPets() {
+		for (VirtualPet pet : list.values()) {
+			System.out.println(pet.printStats()+"\n");
 		}
 	}
 	

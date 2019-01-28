@@ -13,13 +13,12 @@ public class Application {
 		shelter.addPet(testPetTwo);
 		VirtualPet testPetThree = new VirtualPet("ToDo");
 		shelter.addPet(testPetThree);
-		
-		
+
 		System.out.println("    Welcome to <Pet Store Name>! \nWhat would you like to Name your pet?");
 		String name = input.nextLine();
 		VirtualPet introPet = new VirtualPet(name);
 		shelter.addPet(introPet);
-		
+
 		System.out.println("Meet " + introPet.getName() + "!");
 
 		System.out.println("To take a tour press 1. \nTo get started press 2.");
@@ -30,7 +29,7 @@ public class Application {
 			if (choice.equals("1")) {
 				String petAction;
 				for (int i = 0; i < 5; i++) {
-					introPet.tick();					
+					introPet.tick();
 				}
 
 				System.out.println(
@@ -72,17 +71,75 @@ public class Application {
 		// Intro to Game
 		System.out.println("Congratulations you have a happy and healthy pet! Lets get started!");
 		System.out.println(introPet.printStats());
+
+		// Main menu
+		System.out.println("-Main Menu Options-");
+		System.out.println("1. Single Pet Interaction \n2. Go to the shelter \n");
+		String menuChoice = input.nextLine();
+		switch (menuChoice) {
+		case "1":
+			singlePetInteraction(input, shelter);
+		case "2":
+			multiPetInteraction(input, shelter);
+		}
+
+		input.close();
+	}
+
+	private static void multiPetInteraction(Scanner input, VirtualPetShelter shelter) {
+		shelter.listPets();
+
+		boolean allAlive = true;
+		while (allAlive) {
+			System.out.println("1. Feed All  2. Hydrate All\n3. Play With All  4. Clean All\n5.Adopt Out (get rid off) 6. Take in (create)\n7. Display Status of Pets  8.Exit to Main Menu");
+			String menuChoice = input.nextLine();
+			shelter.tickAll();
+			
+			switch (menuChoice) {
+			case "1":
+				shelter.feedAll();
+				break;
+			case "2":
+				shelter.hydrateAll();
+				break;
+			case "3":
+				shelter.playAll();
+				break;
+			case "4":
+				shelter.cleanAll();
+				break;
+			case "5":
+				shelter.listPets();
+				System.out.println("Which pet is being adopted?");
+				String adoptedPet = input.nextLine();
+				VirtualPet pet = shelter.getPet(adoptedPet);
+				shelter.removePet(pet);
+				break;
+			case "6":
+				System.out.println("What is the new pets name?");
+				String petName = input.nextLine();
+				VirtualPet addPet = new VirtualPet(petName);
+				shelter.addPet(addPet);
+				break;
+			case "7":
+				shelter.statusOfAllPets();
+				break;
+			case "8": 
+			}
+		}
+	}
+
+	private static void singlePetInteraction(Scanner input, VirtualPetShelter shelter) {
 		shelter.listPets();
 		System.out.println("Please choose a pet by their name.");
 		String petToGet = input.nextLine();
 		VirtualPet activePet = shelter.getPet(petToGet);
-		// Menu
 		boolean isAlive = true;
 		while (isAlive) {
 			System.out.println("1. Feed \n2. Hydrate \n3. Play \n4. Clean \n5. Check Status \n6. Exit");
 			String menuChoice = input.nextLine();
 			activePet.tick();
-			
+
 			switch (menuChoice) {
 			case "1":
 				activePet.feed();
@@ -100,11 +157,10 @@ public class Application {
 				System.out.println(activePet.printStats());
 				break;
 			case "6":
-				System.exit(0);
+				System.exit(0); // need to leave to mane menu
 				break;
 			}
 
 		}
-		input.close();
 	}
 }
