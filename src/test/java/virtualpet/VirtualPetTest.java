@@ -41,7 +41,7 @@ public class VirtualPetTest {
 
 		int expected = underTest.getHunger();
 
-		assertEquals(expected, 10);
+		assertEquals(expected, 25);
 	}
 
 	@Test
@@ -50,7 +50,7 @@ public class VirtualPetTest {
 
 		int expected = underTest.getBoredom();
 
-		assertEquals(expected, 10);
+		assertEquals(expected, 25);
 	}
 
 	@Test
@@ -59,7 +59,7 @@ public class VirtualPetTest {
 
 		underTest.play();
 
-		assertEquals(15, underTest.getBoredom());
+		assertEquals(30, underTest.getBoredom());
 	}
 
 	@Test
@@ -68,7 +68,7 @@ public class VirtualPetTest {
 
 		underTest.feed();
 
-		assertEquals(15, underTest.getHunger());
+		assertEquals(30, underTest.getHunger());
 	}
 
 	@Test
@@ -77,7 +77,7 @@ public class VirtualPetTest {
 
 		int expected = underTest.getThirst();
 
-		assertEquals(expected, 10);
+		assertEquals(expected, 25);
 	}
 
 	@Test
@@ -85,7 +85,7 @@ public class VirtualPetTest {
 		VirtualPet underTest = new VirtualPet("Steve");
 		underTest.tick();
 
-		assertEquals(underTest.getThirst(), 9);
+		assertEquals(underTest.getThirst(), 24);
 
 	}
 
@@ -99,30 +99,8 @@ public class VirtualPetTest {
 
 		// int expected = underTest..getThirst().tick().getThirst()));
 
-		assertEquals(underTest.getThirst(), 8);
+		assertEquals(underTest.getThirst(), 23);
 	}
-
-	// @Test
-	// public void tickShouldNotMakeThirstGoNegative() {
-	// VirtualPet underTest = new VirtualPet("Steve");
-	// // Call tick twice so first variation decreases thirst from 10 to 9,
-	// // then second variation decreases 9 to 8
-	// underTest.tick();
-	// underTest.tick();
-	// underTest.tick();
-	// underTest.tick();
-	// underTest.tick();
-	// underTest.tick();
-	// underTest.tick();
-	// underTest.tick();
-	// underTest.tick();
-	// underTest.tick();
-	// underTest.tick();
-	//
-	// // int expected = underTest..getThirst().tick().getThirst()));
-	//
-	// assertEquals(underTest.getThirst(), 0);
-	// }
 
 	@Test
 	public void healthShouldReturnOneHundred() {
@@ -131,113 +109,5 @@ public class VirtualPetTest {
 		assertEquals(hp, 100);
 
 	}
-	@Test
-	public void letsGoToTheShelter() {
-		VirtualPetShelter underTest = new VirtualPetShelter();
-		
-	}
 	
-	@Test
-	public void letsPutaDogInTheShelter() {
-		VirtualPetShelter underTest = new VirtualPetShelter();
-		
-	}
-	@Test
-	public void returnListofanimals() {
-		//act
-		VirtualPetShelter underTest = new VirtualPetShelter();
-		VirtualPet underTestDog = new VirtualPet("Booker");
-		underTest.addPet(underTestDog);
-		int size = underTest.getLength();
-		
-		//arrange
-		
-		
-		//assert
-		assertEquals(1, size);
-		
-		
-		
-		
-	}
-	
-	@Test
-	public void shouldFeedAllPets() {
-		//arrange
-		VirtualPetShelter underTest = new VirtualPetShelter();
-		VirtualPet underTestDog = new VirtualPet("Booker");
-		VirtualPet underTestCat = new VirtualPet("Sam");
-		underTest.addPet(underTestDog);
-		underTest.addPet(underTestCat);
-		
-		
-		//act
-		underTest.feedAll();
-		
-		
-		//assert
-		assertEquals(15, underTestDog.getHunger());
-		assertEquals(15, underTestCat.getHunger());
-		
-	}
-	
-	@Test
-	public void shouldCleanAllPets() {
-		//arrange
-		VirtualPetShelter underTest = new VirtualPetShelter();
-		VirtualPet underTestDog = new VirtualPet("Booker");
-		VirtualPet underTestCat = new VirtualPet("Sam");
-		underTest.addPet(underTestDog);
-		underTest.addPet(underTestCat);
-		
-		
-		//act
-		underTest.cleanAll();
-		
-		
-		//assert
-		assertEquals(15, underTestDog.getCleanliness());
-		assertEquals(15, underTestCat.getCleanliness());
-		
-	}
-	
-	@Test
-	public void shouldHydrateAllPets() {
-		//arrange
-		VirtualPetShelter underTest = new VirtualPetShelter();
-		VirtualPet underTestDog = new VirtualPet("Booker");
-		VirtualPet underTestCat = new VirtualPet("Sam");
-		underTest.addPet(underTestDog);
-		underTest.addPet(underTestCat);
-		
-		
-		//act
-		underTest.hydrateAll();
-		
-		
-		//assert
-		assertEquals(15, underTestDog.getThirst());
-		assertEquals(15, underTestCat.getThirst());
-		
-	}
-	
-	@Test
-	public void shouldPlayWithAllPets() {
-		//arrange
-		VirtualPetShelter underTest = new VirtualPetShelter();
-		VirtualPet underTestDog = new VirtualPet("Booker");
-		VirtualPet underTestCat = new VirtualPet("Sam");
-		underTest.addPet(underTestDog);
-		underTest.addPet(underTestCat);
-		
-		
-		//act
-		underTest.playAll();
-		
-		
-		//assert
-		assertEquals(15, underTestDog.getBoredom());
-		assertEquals(15, underTestCat.getBoredom());
-		
-	}
 }
