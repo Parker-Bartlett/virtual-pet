@@ -1,10 +1,12 @@
 package virtualpet;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class VirtualPetShelter {
 	
-	private	ArrayList<VirtualPet> list = new ArrayList<VirtualPet>();
+	
+	
+	private	HashMap<String, VirtualPet> list = new HashMap<String, VirtualPet>();
 	
 	public VirtualPetShelter() {
 		
@@ -17,37 +19,64 @@ public class VirtualPetShelter {
 	 */
 	// Adds pet to the list
 	public void addPet(VirtualPet pet) {
-		list.add(pet);	
+		list.put(pet.getName(), pet);	
 		
-	}	
+	}
 	
-	// Return size of the array
+	public VirtualPet getPet(String petToGet) {
+		return list.get(petToGet);
+	}
+	
+	public void removePet (VirtualPet pet) {
+		list.remove(pet.getName());
+	}
+	
+	// Return size of the HashMap
 	public int getLength() {
 		return list.size();
 	}
 	
 	public void feedAll() {
-		for (int i = 0; i < list.size(); i++) {
-			list.get(i).feed();
+		for (VirtualPet pet : list.values()) {
+			pet.feed();
 		}
 	}
 	
 	public void cleanAll() {
-		for (int i = 0; i < list.size(); i++) {
-			list.get(i).clean();		
-			}
+		for (VirtualPet pet : list.values()) {
+			pet.clean();
+		}
 	}
 	
 	public void hydrateAll() {
-		for (int i = 0; i < list.size(); i++) {
-			list.get(i).hydrate();		
-			}
+		for (VirtualPet pet : list.values()) {
+			pet.hydrate();
+		}
 	}
 	
 	public void playAll() {
-		for (int i = 0; i < list.size(); i++) {
-			list.get(i).play();		
-			}
+		for (VirtualPet pet : list.values()) {
+			pet.play();
+		}
+	}
+	
+	public void tickAll() {
+		for (VirtualPet pet : list.values()) {
+			pet.tick();
+		}
+	}
+
+	public void listPets() {
+		for (VirtualPet pet : list.values()) {
+			System.out.println("Name: " +pet.getName());
+		}
+	}
+
+
+	public void statusOfAllPets() {
+		for (VirtualPet pet : list.values()) {
+			System.out.println(pet.printStats()+"\n");
+		}
 	}
 	
 }//close class
