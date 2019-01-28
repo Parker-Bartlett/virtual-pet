@@ -29,7 +29,9 @@ public class Application {
 		while (foo) {
 			if (choice.equals("1")) {
 				String petAction;
-				introPet.tick();
+				for (int i = 0; i < 5; i++) {
+					introPet.tick();					
+				}
 
 				System.out.println(
 						"Welcome to the Shelter.  In order to keep your pets happy and healthy, you will need to care for your pet");
