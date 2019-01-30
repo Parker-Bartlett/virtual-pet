@@ -1,5 +1,6 @@
 package virtualpet;
 
+import java.awt.Toolkit;
 import java.util.Scanner;
 
 public class Application {
@@ -54,6 +55,9 @@ public class Application {
 				petAction = input.nextLine();
 				if (petAction.equals("4")) {
 					introPet.clean();
+					Toolkit.getDefaultToolkit().beep();
+					System.out.println("\n**Achievement Unlocked: You have access to Robotic Pets**");
+					System.out.println("Inside your shelter you can take in both Organic and Robotic Pets\n");
 				}
 
 				foo = false;
@@ -66,12 +70,11 @@ public class Application {
 				System.out.println("Please enter 1 or 2.");
 				choice = input.nextLine();
 			}
+			
 		}
 
 		// Intro to Game
-		System.out.println("Congratulations you have a happy and healthy pet! Lets get started!");
-		System.out.println(introPet.printStats());
-
+		System.out.println("Congratulations you have a happy and healthy pet! Lets get started!\n\n");
 
 		boolean gameIsOn = true;
 		while (gameIsOn) {
@@ -88,7 +91,7 @@ public class Application {
 				break;
 			}
 		}
-	}	
+	}
 
 	private static void multiPetInteraction(Scanner input, VirtualPetShelter shelter) {
 		shelter.listPets();
@@ -126,7 +129,7 @@ public class Application {
 					} else {
 						System.out.println("Please enter an existing pets name:");
 						adoptedPet = input.nextLine();
-						}
+					}
 				}
 				break;
 			case "6":
@@ -193,10 +196,10 @@ public class Application {
 				System.out.println(activePet.printStats());
 				break;
 			case "6":
-				isAlive = false;
+				isAlive = !isAlive;
 				break;
 			}
 
 		}
-	}		
+	}
 }
