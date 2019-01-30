@@ -9,17 +9,17 @@ import org.junit.Test;
 
 import junit.framework.Assert;
 
-public class VirtualPetTest {
+public class OrganicPetTest {
 
 	@Test
 	public void shouldBeAbleToCreatePet() {
-		VirtualPet pet = new VirtualPet("");
+		VirtualPet pet = new OrganicPet("");
 
 	}
 
 	@Test
 	public void petShouldHaveNameJeff() {
-		VirtualPet underTest = new VirtualPet("Jeff");
+		VirtualPet underTest = new OrganicPet("Jeff");
 
 		String expected = underTest.getName();
 
@@ -28,7 +28,7 @@ public class VirtualPetTest {
 
 	@Test
 	public void petShouldHaveNameWill() {
-		VirtualPet underTest = new VirtualPet("Will");
+		VirtualPet underTest = new OrganicPet("Will");
 
 		String expected = underTest.getName();
 
@@ -37,7 +37,7 @@ public class VirtualPetTest {
 
 	@Test
 	public void shouldHaveDefaultHunger() {
-		VirtualPet underTest = new VirtualPet("Steve");
+		VirtualPet underTest = new OrganicPet("Steve");
 
 		int expected = underTest.getHunger();
 
@@ -46,7 +46,7 @@ public class VirtualPetTest {
 
 	@Test
 	public void shouldHaveDefaultBored() {
-		VirtualPet underTest = new VirtualPet("Steve");
+		VirtualPet underTest = new OrganicPet("Steve");
 
 		int expected = underTest.getBoredom();
 
@@ -55,7 +55,7 @@ public class VirtualPetTest {
 
 	@Test
 	public void shouldHavePlayMethodReturnBoredomPlusFive() {
-		VirtualPet underTest = new VirtualPet("Steve");
+		VirtualPet underTest = new OrganicPet("Steve");
 
 		underTest.play();
 
@@ -64,7 +64,7 @@ public class VirtualPetTest {
 
 	@Test
 	public void shouldHaveFeedMethodReturnHungerPlusFive() {
-		VirtualPet underTest = new VirtualPet("Steve");
+		VirtualPet underTest = new OrganicPet("Steve");
 
 		underTest.feed();
 
@@ -73,25 +73,25 @@ public class VirtualPetTest {
 
 	@Test
 	public void shouldHaveDefaultThirst() {
-		VirtualPet underTest = new VirtualPet("Steve");
+		VirtualPet underTest = new OrganicPet("Steve");
 
-		int expected = underTest.getThirst();
+		int expected = ((OrganicPet) underTest).getThirst();
 
 		assertEquals(expected, 25);
 	}
 
 	@Test
 	public void tickShouldDecreaseByOne() {
-		VirtualPet underTest = new VirtualPet("Steve");
+		VirtualPet underTest = new OrganicPet("Steve");
 		underTest.tick();
 
-		assertEquals(underTest.getThirst(), 24);
+		assertEquals(((OrganicPet) underTest).getThirst(), 24);
 
 	}
 
 	@Test
 	public void tickShouldDecreaseByTwo() {
-		VirtualPet underTest = new VirtualPet("Steve");
+		VirtualPet underTest = new OrganicPet("Steve");
 		// Call tick twice so first variation decreases thirst from 10 to 9,
 		// then second variation decreases 9 to 8
 		underTest.tick();
@@ -99,12 +99,12 @@ public class VirtualPetTest {
 
 		// int expected = underTest..getThirst().tick().getThirst()));
 
-		assertEquals(underTest.getThirst(), 23);
+		assertEquals(((OrganicPet) underTest).getThirst(), 23);
 	}
 
 	@Test
 	public void healthShouldReturnOneHundred() {
-		VirtualPet underTest = new VirtualPet("Steve");
+		VirtualPet underTest = new OrganicPet("Steve");
 		int hp = underTest.getHealth();
 		assertEquals(hp, 100);
 
