@@ -44,7 +44,7 @@ public class Application {
 				petAction = input.nextLine();
 				if (petAction.equals("2")) {
 					((OrganicPet) introPet).hydrate();
-					}
+				}
 				System.out.print("Your pet is board! Play with it by pressing 3.");
 				petAction = input.nextLine();
 				if (petAction.equals("3")) {
@@ -72,29 +72,34 @@ public class Application {
 		System.out.println("Congratulations you have a happy and healthy pet! Lets get started!");
 		System.out.println(introPet.printStats());
 
-		// Main menu
-		System.out.println("-Main Menu Options-");
-		System.out.println("1. Single Pet Interaction \n2. Go to the shelter \n");
-		String menuChoice = input.nextLine();
-		switch (menuChoice) {
-		case "1":
-			singlePetInteraction(input, shelter);
-		case "2":
-			multiPetInteraction(input, shelter);
-		}
 
-		input.close();
-	}
+		boolean gameIsOn = true;
+		while (gameIsOn) {
+			// Main menu
+			System.out.println("-Main Menu Options-");
+			System.out.println("1. Single Pet Interaction \n2. Go to the shelter \n");
+			String menuChoice = input.nextLine();
+			switch (menuChoice) {
+			case "1":
+				singlePetInteraction(input, shelter);
+				break;
+			case "2":
+				multiPetInteraction(input, shelter);
+				break;
+			}
+		}
+	}	
 
 	private static void multiPetInteraction(Scanner input, VirtualPetShelter shelter) {
 		shelter.listPets();
 
 		boolean allAlive = true;
 		while (allAlive) {
-			System.out.println("1. Feed All  2. Hydrate All\n3. Play With All  4. Clean All\n5.Adopt Out (get rid off) 6. Take in (create)\n7. Display Status of Pets  8.Exit to Main Menu");
+			System.out.println(
+					"1. Feed All  2. Hydrate and Lubricate All\n3. Play With All  4. Clean All\n5.Adopt Out (get rid off) 6. Take in (create)\n7. Display Status of Pets  8.Exit to Main Menu");
 			String menuChoice = input.nextLine();
 			shelter.tickAll();
-			
+
 			switch (menuChoice) {
 			case "1":
 				shelter.feedAll();
@@ -112,8 +117,17 @@ public class Application {
 				shelter.listPets();
 				System.out.println("Which pet is being adopted?");
 				String adoptedPet = input.nextLine();
-				VirtualPet pet = shelter.getPet(adoptedPet);
-				shelter.removePet(pet);
+				boolean answerIsNotExistingPet = true;
+				while (answerIsNotExistingPet) {
+					if (shelter.checkIfListContains(adoptedPet)) {
+						VirtualPet pet = shelter.getPet(adoptedPet);
+						shelter.removePet(pet);
+						answerIsNotExistingPet = false;
+					} else {
+						System.out.println("Please enter an existing pets name:");
+						adoptedPet = input.nextLine();
+						}
+				}
 				break;
 			case "6":
 				System.out.println("What is the new pets name?");
@@ -132,7 +146,9 @@ public class Application {
 			case "7":
 				shelter.statusOfAllPets();
 				break;
-			case "8": 
+			case "8":
+				allAlive = !allAlive;
+				break;
 			}
 		}
 	}
@@ -142,15 +158,16 @@ public class Application {
 		System.out.println("Please choose a pet by their name.");
 		String petToGet = input.nextLine();
 		VirtualPet activePet = shelter.getPet(petToGet);
-		
+
 		String hydrateOrLubricate = "hydrate";
 		if (activePet instanceof RoboticPet) {
 			hydrateOrLubricate = "lubricate";
-		} 
-		
+		}
+
 		boolean isAlive = true;
 		while (isAlive) {
-			System.out.println("1. Feed \n2. "+ hydrateOrLubricate +"\n3. Play \n4. Clean \n5. Check Status \n6. Exit");
+			System.out
+					.println("1. Feed \n2. " + hydrateOrLubricate + "\n3. Play \n4. Clean \n5. Check Status \n6. Exit");
 			String menuChoice = input.nextLine();
 			activePet.tick();
 
@@ -176,10 +193,10 @@ public class Application {
 				System.out.println(activePet.printStats());
 				break;
 			case "6":
-				System.exit(0); // need to leave to mane menu
+				isAlive = false;
 				break;
 			}
 
 		}
-	}
+	}		
 }

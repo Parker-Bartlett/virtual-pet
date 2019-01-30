@@ -20,7 +20,7 @@ public class RoboticPet extends VirtualPet {
 	}
 
 	public String printStats() {
-		String stats = this.getName() + ": \nHunger:" + this.getHunger() + "\nLubrication:" + lubrication + "\nBoredom:" + this.getBoredom()
+		String stats = "Robotic Pet - " + this.getName() + ": \nHunger:" + this.getHunger() + "\nLubrication:" + lubrication + "\nBoredom:" + this.getBoredom()
 				+ "\nCleanliness:" + this.getCleanliness() + "\nHealth:" + this.getHealth();
 		return stats;
 

@@ -1,5 +1,6 @@
 package virtualpet;
 
+import java.lang.reflect.Array;
 import java.util.HashMap;
 
 public class VirtualPetShelter {
@@ -18,6 +19,13 @@ public class VirtualPetShelter {
 	public void addPet(VirtualPet pet) {
 		list.put(pet.getName(), pet);
 
+	}
+	
+	public boolean checkIfListContains(String name) {
+		if (list.containsKey(name)) {
+			return true;
+		}
+		return false;
 	}
 
 	public VirtualPet getPet(String petToGet) {
@@ -70,7 +78,12 @@ public class VirtualPetShelter {
 
 	public void listPets() {
 		for (VirtualPet pet : list.values()) {
-			System.out.println("Name: " + pet.getName());
+			if (pet instanceof OrganicPet) {
+				System.out.println("Organic Pet - Name: " + pet.getName());
+			}
+			if (pet instanceof RoboticPet) {
+				System.out.println("Robotic Pet - Name:" + pet.getName());
+			}
 		}
 	}
 
