@@ -7,11 +7,11 @@ public class Application {
 		Scanner input = new Scanner(System.in);
 
 		VirtualPetShelter shelter = new VirtualPetShelter();
-		VirtualPet testPetOne = new VirtualPet("BoBo");
+		VirtualPet testPetOne = new OrganicPet("BoBo");
 		shelter.addPet(testPetOne);
-		VirtualPet testPetTwo = new VirtualPet("FroDo");
+		VirtualPet testPetTwo = new OrganicPet("FroDo");
 		shelter.addPet(testPetTwo);
-		VirtualPet testPetThree = new VirtualPet("ToDo");
+		VirtualPet testPetThree = new RoboticPet("ToDo");
 		shelter.addPet(testPetThree);
 
 		System.out.println("    Welcome to <Pet Store Name>! \nWhat would you like to Name your pet?");

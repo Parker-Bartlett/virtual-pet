@@ -50,7 +50,13 @@ public class VirtualPetShelter {
 	
 	public void hydrateAll() {
 		for (VirtualPet pet : list.values()) {
-			pet.hydrate();
+		if(pet instanceof OrganicPet) {
+			
+		}
+		}
+//		for (OrganicPet oPet : list.values()) {
+//		
+//		}	
 		}
 	}
 	

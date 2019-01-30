@@ -101,6 +101,20 @@ public class VirtualPetShelterTest {
 		// assert
 		assertEquals(30, underTestDog.getBoredom());
 		assertEquals(30, underTestCat.getBoredom());
-
 	}
+
+	@Test
+	public void shouldTickAll() {
+		// arrange
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		VirtualPet underTestDog = new OrganicPet("Booker");
+		VirtualPet underTestCat = new RoboticPet("Sam");
+		underTest.addPet(underTestDog);
+		underTest.addPet(underTestCat);
+		
+		underTest.tickAll();
+		
+		assertEquals(24, underTestDog.getHunger());
+	}
+
 }
