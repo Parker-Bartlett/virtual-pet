@@ -16,7 +16,7 @@ public class Application {
 
 		System.out.println("    Welcome to <Pet Store Name>! \nWhat would you like to Name your pet?");
 		String name = input.nextLine();
-		VirtualPet introPet = new VirtualPet(name);
+		VirtualPet introPet = new OrganicPet(name);
 		shelter.addPet(introPet);
 
 		System.out.println("Meet " + introPet.getName() + "!");
@@ -43,8 +43,8 @@ public class Application {
 				System.out.print("Your pet is thursty! Hydrate it by pressing 2.");
 				petAction = input.nextLine();
 				if (petAction.equals("2")) {
-					introPet.hydrate();
-				}
+					((OrganicPet) introPet).hydrate();
+					}
 				System.out.print("Your pet is board! Play with it by pressing 3.");
 				petAction = input.nextLine();
 				if (petAction.equals("3")) {
@@ -118,8 +118,16 @@ public class Application {
 			case "6":
 				System.out.println("What is the new pets name?");
 				String petName = input.nextLine();
-				VirtualPet addPet = new VirtualPet(petName);
-				shelter.addPet(addPet);
+				System.out.println("Is it organic or a robotic?");
+				String organicOrRobotic = input.nextLine();
+				if (organicOrRobotic.equalsIgnoreCase("organic")) {
+					VirtualPet addPet = new OrganicPet(petName);
+					shelter.addPet(addPet);
+				}
+				if (organicOrRobotic.equalsIgnoreCase("robotic")) {
+					VirtualPet addPet = new RoboticPet(petName);
+					shelter.addPet(addPet);
+				}
 				break;
 			case "7":
 				shelter.statusOfAllPets();
@@ -134,9 +142,15 @@ public class Application {
 		System.out.println("Please choose a pet by their name.");
 		String petToGet = input.nextLine();
 		VirtualPet activePet = shelter.getPet(petToGet);
+		
+		String hydrateOrLubricate = "hydrate";
+		if (activePet instanceof RoboticPet) {
+			hydrateOrLubricate = "lubricate";
+		} 
+		
 		boolean isAlive = true;
 		while (isAlive) {
-			System.out.println("1. Feed \n2. Hydrate \n3. Play \n4. Clean \n5. Check Status \n6. Exit");
+			System.out.println("1. Feed \n2. "+ hydrateOrLubricate +"\n3. Play \n4. Clean \n5. Check Status \n6. Exit");
 			String menuChoice = input.nextLine();
 			activePet.tick();
 
@@ -145,7 +159,12 @@ public class Application {
 				activePet.feed();
 				break;
 			case "2":
-				activePet.hydrate();
+				if (activePet instanceof OrganicPet) {
+					((OrganicPet) activePet).hydrate();
+				}
+				if (activePet instanceof RoboticPet) {
+					((RoboticPet) activePet).getLubrication();
+				}
 				break;
 			case "3":
 				activePet.play();
