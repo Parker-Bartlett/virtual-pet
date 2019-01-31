@@ -16,6 +16,7 @@ public class RoboticPet extends VirtualPet {
 
 	public int lubricate() {
 		lubrication += 5;
+		super.increaseHealth();
 		return lubrication;
 	}
 
@@ -29,11 +30,10 @@ public class RoboticPet extends VirtualPet {
 	public void tick() {
 		this.tickSuperClassVariables();
 		lubrication -= 1;
-
-		this.reducesHealthWhen0();
 		if (lubrication <= 0) {
-			this.tickHealth();
-			System.out.println("Sorry your pet " + this.getName() + " has lost 25 health points!");
+			lubrication = 0;
+			System.out.println("Your pet, " + this.getName() + "joints and such are seizing up.");
 		}
+		this.reducesHealthWhen0();
 	}
 }

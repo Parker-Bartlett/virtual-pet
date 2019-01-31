@@ -16,9 +16,13 @@ public class OrganicPet extends VirtualPet {
 	
 	public int hydrate() {
 		thirst += 5;
+		super.increaseHealth();
 		return thirst;
+		
 	}
 	
+	
+
 	public String printStats() {
 		String stats= "Organic Pet - " + this.getName() + ": \nHunger:" +this.getHunger()+ "\nThirst:" +thirst+ "\nBoredom:" +this.getBoredom()+ "\nCleanliness:" +this.getCleanliness()+ "\nHealth:" +this.getHealth();
 		return stats;
@@ -27,12 +31,12 @@ public class OrganicPet extends VirtualPet {
 	public void tick() {
 		this.tickSuperClassVariables();
 		thirst -= 1;
-		
-		this.reducesHealthWhen0();
 		if (thirst <= 0) {
-			this.tickHealth();
-			System.out.println("Sorry your pet " + this.getName() + " has lost 25 health points!");
+			thirst = 0;
+			System.out.println("Your pet, " + this.getName() + ", needs the cool refreshing taste of water.");
 		}
+		this.reducesHealthWhen0();
+		
 	}
 		
 }

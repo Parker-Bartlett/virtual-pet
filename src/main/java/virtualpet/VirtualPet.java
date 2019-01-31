@@ -40,16 +40,19 @@ public abstract class VirtualPet {
 
 	public int play() {
 		boredom += 5;
+		increaseHealth();
 		return boredom;
 	}
 
 	public int feed() {
 		hunger += 5;
+		increaseHealth();
 		return hunger;
 	}
 
 	public int clean() {
 		cleanliness += 5;
+		increaseHealth();
 		return cleanliness;
 	}
 	
@@ -59,33 +62,35 @@ public abstract class VirtualPet {
 		boredom -= 1;
 		hunger -= 1;
 		cleanliness -= 1;
+		health -= 4;
 	}
 	
-	public void tickHealth() {
-		health -= 25;
-	}
+	
 
 	public void reducesHealthWhen0() {
-		String lostHp = "Sorry your pet " + name + " has lost 25 health points!";
-
 		if (hunger <= 0) {
-			health -= 25;
-			System.out.println(lostHp);
+			System.out.println("Your pet " + name + " is starving, bruh.\nFeed it!");
+			hunger = 0;
 		}
 
 		if (boredom <= 0) {
-			health -= 25;
-			System.out.println(lostHp);
+			System.out.println("Your pet " + name + " is bored.  This might lead to depression...\nPlay with it.");
+			boredom = 0;
 		}
 
 		if (cleanliness <= 0) {
-			health -= 25;
-			System.out.println(lostHp);
+			System.out.println("What's that smell? It might be " + name + "...  Clean it.");
+			cleanliness = 0;
 		}
 
 		if (health <= 0) {
 			System.out.println("Sorry your pet " + name + " died!");
 			System.exit(0);
 		}
+	}
+
+	public void increaseHealth() {
+		health += 5;
+		
 	}
 }
