@@ -56,10 +56,14 @@ public class Application {
 				if (petAction.equals("4")) {
 					introPet.clean();
 					Toolkit.getDefaultToolkit().beep();
-					System.out.println("********************************************************************************");
-					System.out.println("************Achievement Unlocked: You have access to Robotic Pets***************");
-					System.out.println("********************************************************************************");
-					System.out.println("Inside your shelter you can take in both Organic and Robotic Pets\nIsn't that wonderful?");
+					System.out.println(
+							"********************************************************************************");
+					System.out.println(
+							"************Achievement Unlocked: You have access to Robotic Pets***************");
+					System.out.println(
+							"********************************************************************************");
+					System.out.println(
+							"Inside your shelter you can take in both Organic and Robotic Pets\nIsn't that wonderful?");
 				}
 
 				foo = false;
@@ -72,7 +76,7 @@ public class Application {
 				System.out.println("Please enter 1 or 2.");
 				choice = input.nextLine();
 			}
-			
+
 		}
 
 		// Intro to Game
@@ -97,15 +101,15 @@ public class Application {
 			multiPetInteraction(input, shelter);
 			break;
 		case "3":
-			System.out.println("Well, I guess these animals will all die... \nNo, it's fine, just leave, we'll find somebody else to care for these poor animals.");
-			
-			
+			System.out.println(
+					"Well, I guess these animals will all die... \nNo, it's fine, just leave, we'll find somebody else to care for these poor animals.");
+
 			System.exit(0);
 		}
 	}
 
 	private static void multiPetInteraction(Scanner input, VirtualPetShelter shelter) {
-		shelter.listPets();
+		System.out.println(shelter.listPets());
 
 		boolean allAlive = true;
 		while (allAlive) {
@@ -128,7 +132,7 @@ public class Application {
 				shelter.cleanAll();
 				break;
 			case "5":
-				shelter.listPets();
+				System.out.println(shelter.listPets());
 				System.out.println("Which pet is being adopted?");
 				String adoptedPet = input.nextLine();
 				boolean answerIsNotExistingPet = true;
@@ -161,7 +165,7 @@ public class Application {
 				shelter.statusOfAllPets();
 				break;
 			case "8":
-				
+
 				allAlive = !allAlive;
 				break;
 			}
@@ -169,9 +173,8 @@ public class Application {
 	}
 
 	private static void singlePetInteraction(Scanner input, VirtualPetShelter shelter) {
-		
-		
-		shelter.listPets();
+
+		System.out.println(shelter.listPets());
 		System.out.println("Please choose a pet by their name.");
 		String petToGet = input.nextLine();
 		boolean answerIsNotExistingPet = true;
@@ -179,61 +182,50 @@ public class Application {
 			if (!shelter.checkIfListContains(petToGet)) {
 				System.out.println("Please enter an existing pets name:");
 				petToGet = input.nextLine();
-			} 
-				
-			
-		
-		
-			VirtualPet activePet = shelter.getPet(petToGet);
-		
-		
-		
-		
-		
-		
-	
-
-		String hydrateOrLubricate = "hydrate";
-		if (activePet instanceof RoboticPet) {
-			hydrateOrLubricate = "lubricate";
-		}
-		
-		boolean isAlive = true;
-		while (isAlive) {
-			System.out
-					.println("1. Feed \n2. " + hydrateOrLubricate + "\n3. Play \n4. Clean \n5. Check Status \n6. Exit");
-			String menuChoice = input.nextLine();
-			activePet.tick();
-
-			switch (menuChoice) {
-			case "1":
-				activePet.feed();
-				break;
-			case "2":
-				if (activePet instanceof OrganicPet) {
-					((OrganicPet) activePet).hydrate();
-				}
-				if (activePet instanceof RoboticPet) {
-					((RoboticPet) activePet).getLubrication();
-				}
-				break;
-			case "3":
-				activePet.play();
-				break;
-			case "4":
-				activePet.clean();
-				break;
-			case "5":
-				System.out.println(activePet.printStats());
-				break;
-			case "6":
-				userMainMenu(input, shelter);
-				//isAlive = !isAlive;
-				break;
 			}
-		}
 
-		
-	}
+			VirtualPet activePet = shelter.getPet(petToGet);
+
+			String hydrateOrLubricate = "hydrate";
+			if (activePet instanceof RoboticPet) {
+				hydrateOrLubricate = "lubricate";
+			}
+
+			boolean isAlive = true;
+			while (isAlive) {
+				System.out.println(
+						"1. Feed \n2. " + hydrateOrLubricate + "\n3. Play \n4. Clean \n5. Check Status \n6. Exit");
+				String menuChoice = input.nextLine();
+				activePet.tick();
+
+				switch (menuChoice) {
+				case "1":
+					activePet.feed();
+					break;
+				case "2":
+					if (activePet instanceof OrganicPet) {
+						((OrganicPet) activePet).hydrate();
+					}
+					if (activePet instanceof RoboticPet) {
+						((RoboticPet) activePet).getLubrication();
+					}
+					break;
+				case "3":
+					activePet.play();
+					break;
+				case "4":
+					activePet.clean();
+					break;
+				case "5":
+					System.out.println(activePet.printStats());
+					break;
+				case "6":
+					userMainMenu(input, shelter);
+					// isAlive = !isAlive;
+					break;
+				}
+			}
+
+		}
 	}
 }
