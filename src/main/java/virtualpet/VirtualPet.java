@@ -40,19 +40,22 @@ public abstract class VirtualPet {
 
 	public int play() {
 		boredom += 5;
-		increaseHealth();
+		health += 5;
+		increaseHealth(health);
 		return boredom;
 	}
 
 	public int feed() {
 		hunger += 5;
-		increaseHealth();
+		health += 5;
+		increaseHealth(health);
 		return hunger;
 	}
 
 	public int clean() {
 		cleanliness += 5;
-		increaseHealth();
+		health += 5;
+		increaseHealth(health);
 		return cleanliness;
 	}
 	
@@ -70,7 +73,7 @@ public abstract class VirtualPet {
 	public void reducesHealthWhen0() {
 		if (hunger <= 0) {
 			System.out.println("Your pet " + name + " is starving, bruh.\nFeed it!");
-			hunger = 0;
+			 hunger = 0;
 		}
 
 		if (boredom <= 0) {
@@ -89,8 +92,31 @@ public abstract class VirtualPet {
 		}
 	}
 
-	public void increaseHealth() {
-		health += 5;
+	public void increaseHealth(int healthUp) {
+		this.health += healthUp;
 		
+		
+		
+	}
+	
+	public void increaseBoredom(int adjustBoredom) {
+		this.boredom += adjustBoredom;
+		
+		//boredom += 5;
+		
+	
+	}
+	public int increaseHunger(int hungerUp) {
+		
+		this.hunger += hungerUp;
+		
+		return hunger;
+		
+	}
+	
+	public int increaseCleanliness(int cleanlinessUp) {
+		this.cleanliness += cleanlinessUp;
+		
+		return cleanliness;
 	}
 }

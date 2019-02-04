@@ -8,7 +8,7 @@ public class Application {
 		Scanner input = new Scanner(System.in);
 
 		VirtualPetShelter shelter = new VirtualPetShelter();
-		VirtualPet testPetOne = new OrganicPet("BoBo");
+		VirtualPet testPetOne = new Dog("BoBo");
 		shelter.addPet(testPetOne);
 		VirtualPet testPetTwo = new OrganicPet("FroDo");
 		shelter.addPet(testPetTwo);
