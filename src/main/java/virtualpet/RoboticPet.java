@@ -30,12 +30,17 @@ public class RoboticPet extends VirtualPet {
 	public void tick() {
 		this.tickSuperClassVariables();
 		lubrication -= 1;
-		if (lubrication <= 0) {
-			lubrication = 0;
-			System.out.println("Your pet, " + this.getName() + "joints and such are seizing up.");
-		}
-		this.reducesHealthWhen0();
 	}
+	
+	public String check() {
+		String checkStatement = "";
+		checkStatement += this.checkSuperClassVariables();
+		if (lubrication <= 0) {
+			checkStatement += "Your pet, "+this.getName()+"joints and such are seizing up.";
+		}
+		return checkStatement;
+	}
+
 	public int increaseLubrication(int lubeUp) {
 		this.lubrication += lubeUp;
 

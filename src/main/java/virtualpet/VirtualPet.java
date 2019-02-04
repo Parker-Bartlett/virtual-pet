@@ -60,6 +60,7 @@ public abstract class VirtualPet {
 	}
 	
 	public abstract void tick();
+	public abstract String check();
 	
 	public void tickSuperClassVariables() {
 		boredom -= 1;
@@ -70,26 +71,28 @@ public abstract class VirtualPet {
 	
 	
 
-	public void reducesHealthWhen0() {
+	public String checkSuperClassVariables() {
+		String checkStatement = "";
 		if (hunger <= 0) {
-			System.out.println("Your pet " + name + " is starving, bruh.\nFeed it!");
-			 hunger = 0;
+			checkStatement += "Your pet " + name + " is starving, bruh.\nFeed it!";
+			hunger = 0;
 		}
 
 		if (boredom <= 0) {
-			System.out.println("Your pet " + name + " is bored.  This might lead to depression...\nPlay with it.");
+			checkStatement += "Your pet " + name + " is bored.  This might lead to depression...\nPlay with it.";
 			boredom = 0;
 		}
 
 		if (cleanliness <= 0) {
-			System.out.println("What's that smell? It might be " + name + "...  Clean it.");
+			checkStatement += "What's that smell? It might be " + name + "...  Clean it.";
 			cleanliness = 0;
 		}
 
 		if (health <= 0) {
-			System.out.println("Sorry your pet " + name + " died!");
+			checkStatement += "Sorry your pet " + name + " died!";
 			System.exit(0);
 		}
+		return checkStatement;
 	}
 
 	public int increaseHealth(int healthUp) {
@@ -120,5 +123,10 @@ public abstract class VirtualPet {
 		this.cleanliness += cleanlinessUp;
 		
 		return cleanliness;
+	}
+	
+	@Override 
+	public String toString() {
+		return "\nName: " + name;
 	}
 }
