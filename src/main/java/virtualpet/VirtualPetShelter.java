@@ -1,5 +1,6 @@
 package virtualpet;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 public class VirtualPetShelter {
@@ -74,25 +75,38 @@ public class VirtualPetShelter {
 			pet.tick();
 		}
 	}
-
-	public String listPets() {
+	
+	public String checkAll() {
+		String checkStatement = "";
 		for (VirtualPet pet : list.values()) {
-			if (pet instanceof OrganicPet) {
-				String listPetsOrganic = "Organic Pet - Name: " + pet.getName();
-				return listPetsOrganic;
-			}
-			if (pet instanceof RoboticPet) {
-				String listPetsRobotic = "Robotic Pet - Name:" + pet.getName();
-				return listPetsRobotic;
-			}
+			checkStatement += pet.check();
 		}
-		return null;
+		return checkStatement;
 	}
 
-	public void statusOfAllPets() {
+//	public String listPets() {
+//		for (VirtualPet pet : list.values()) {
+//			if (pet instanceof OrganicPet) {
+//				String listPetsOrganic = "Organic Pet - Name: " + pet.getName();
+//				return listPetsOrganic;
+//			}
+//			if (pet instanceof RoboticPet) {
+//				String listPetsRobotic = "Robotic Pet - Name:" + pet.getName();
+//				return listPetsRobotic;
+//			}
+//		}
+//		return null;
+//	}
+
+	public String statusOfAllPets() {
+		String statStatementForAll = "Pet Stats\n";
 		for (VirtualPet pet : list.values()) {
-			System.out.println(pet.printStats() + "\n");
+			statStatementForAll += pet.printStats() + "\n";
 		}
+		return statStatementForAll;
 	}
 
+	public Collection<VirtualPet> getVirtualPets() {
+		return list.values();
+	}
 }// close class

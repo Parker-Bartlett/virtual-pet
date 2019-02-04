@@ -109,7 +109,7 @@ public class Application {
 	}
 
 	private static void multiPetInteraction(Scanner input, VirtualPetShelter shelter) {
-		System.out.println(shelter.listPets());
+		printAllPets(shelter);
 
 		boolean allAlive = true;
 		while (allAlive) {
@@ -117,6 +117,7 @@ public class Application {
 					"1. Feed All  2. Hydrate and Lubricate All\n3. Play With All  4. Clean All\n5.Adopt Out (get rid off) 6. Take in (create)\n7. Display Status of Pets  8.Exit to Main Menu");
 			String menuChoice = input.nextLine();
 			shelter.tickAll();
+			System.out.println(shelter.checkAll());
 
 			switch (menuChoice) {
 			case "1":
@@ -132,7 +133,7 @@ public class Application {
 				shelter.cleanAll();
 				break;
 			case "5":
-				System.out.println(shelter.listPets());
+				printAllPets(shelter);
 				System.out.println("Which pet is being adopted?");
 				String adoptedPet = input.nextLine();
 				boolean answerIsNotExistingPet = true;
@@ -162,7 +163,7 @@ public class Application {
 				}
 				break;
 			case "7":
-				shelter.statusOfAllPets();
+				System.out.println(shelter.statusOfAllPets());
 				break;
 			case "8":
 
@@ -174,7 +175,7 @@ public class Application {
 
 	private static void singlePetInteraction(Scanner input, VirtualPetShelter shelter) {
 
-		System.out.println(shelter.listPets());
+		printAllPets(shelter);
 		System.out.println("Please choose a pet by their name.");
 		String petToGet = input.nextLine();
 		boolean answerIsNotExistingPet = true;
@@ -197,6 +198,7 @@ public class Application {
 						"1. Feed \n2. " + hydrateOrLubricate + "\n3. Play \n4. Clean \n5. Check Status \n6. Exit");
 				String menuChoice = input.nextLine();
 				activePet.tick();
+				System.out.println(activePet.check());
 
 				switch (menuChoice) {
 				case "1":
@@ -227,5 +229,9 @@ public class Application {
 			}
 
 		}
+		
+	}
+	public static void printAllPets(VirtualPetShelter petShelter) {
+		System.out.println(petShelter.getVirtualPets());
 	}
 }
