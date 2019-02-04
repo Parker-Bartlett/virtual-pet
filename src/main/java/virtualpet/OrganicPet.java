@@ -31,12 +31,15 @@ public class OrganicPet extends VirtualPet {
 	public void tick() {
 		this.tickSuperClassVariables();
 		thirst -= 1;
+	}
+	
+	public String check() {
+		String checkStatement = "";
+		checkStatement += this.checkSuperClassVariables();
 		if (thirst <= 0) {
-			thirst = 0;
-			System.out.println("Your pet, " + this.getName() + ", needs the cool refreshing taste of water.");
+			checkStatement += "Your pet," + this.getName() + " is dehydrated. Please Hydrated it.";
 		}
-		this.reducesHealthWhen0();
-		
+		return checkStatement;
 	}
 		
 }

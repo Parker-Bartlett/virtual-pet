@@ -75,6 +75,14 @@ public class VirtualPetShelter {
 			pet.tick();
 		}
 	}
+	
+	public String checkAll() {
+		String checkStatement = "";
+		for (VirtualPet pet : list.values()) {
+			checkStatement += pet.check();
+		}
+		return checkStatement;
+	}
 
 //	public String listPets() {
 //		for (VirtualPet pet : list.values()) {
@@ -90,10 +98,12 @@ public class VirtualPetShelter {
 //		return null;
 //	}
 
-	public void statusOfAllPets() {
+	public String statusOfAllPets() {
+		String statStatementForAll = "Pet Stats\n";
 		for (VirtualPet pet : list.values()) {
-			System.out.println(pet.printStats() + "\n");
+			statStatementForAll += pet.printStats() + "\n";
 		}
+		return statStatementForAll;
 	}
 
 	public Collection<VirtualPet> getVirtualPets() {

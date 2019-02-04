@@ -117,6 +117,7 @@ public class Application {
 					"1. Feed All  2. Hydrate and Lubricate All\n3. Play With All  4. Clean All\n5.Adopt Out (get rid off) 6. Take in (create)\n7. Display Status of Pets  8.Exit to Main Menu");
 			String menuChoice = input.nextLine();
 			shelter.tickAll();
+			System.out.println(shelter.checkAll());
 
 			switch (menuChoice) {
 			case "1":
@@ -162,7 +163,7 @@ public class Application {
 				}
 				break;
 			case "7":
-				shelter.statusOfAllPets();
+				System.out.println(shelter.statusOfAllPets());
 				break;
 			case "8":
 
@@ -197,6 +198,7 @@ public class Application {
 						"1. Feed \n2. " + hydrateOrLubricate + "\n3. Play \n4. Clean \n5. Check Status \n6. Exit");
 				String menuChoice = input.nextLine();
 				activePet.tick();
+				System.out.println(activePet.check());
 
 				switch (menuChoice) {
 				case "1":
