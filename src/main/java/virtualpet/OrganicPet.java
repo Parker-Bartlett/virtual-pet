@@ -9,17 +9,32 @@ public class OrganicPet extends VirtualPet {
 		
 		this.thirst = 25;
 	}
-	
+	  
 	public int getThirst() {
 		return thirst;
 	}
 	
 	public int hydrate() {
 		thirst += 5;
-		super.increaseHealth();
+		super.increaseHealth(thirst);
 		return thirst;
 		
 	}
+	
+	public int increaseThirst(int adjustThirst) {
+
+		this.thirst += adjustThirst;
+ 
+		return thirst;
+		
+	}
+	
+	
+		
+		
+		
+		
+		
 	
 	
 

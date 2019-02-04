@@ -40,19 +40,22 @@ public abstract class VirtualPet {
 
 	public int play() {
 		boredom += 5;
-		increaseHealth();
+		health += 5;
+		increaseHealth(health);
 		return boredom;
 	}
 
 	public int feed() {
 		hunger += 5;
-		increaseHealth();
+		health += 5;
+		increaseHealth(health);
 		return hunger;
 	}
 
 	public int clean() {
 		cleanliness += 5;
-		increaseHealth();
+		health += 5;
+		increaseHealth(health);
 		return cleanliness;
 	}
 	
@@ -92,9 +95,34 @@ public abstract class VirtualPet {
 		return checkStatement;
 	}
 
-	public void increaseHealth() {
-		health += 5;
+	public int increaseHealth(int healthUp) {
+		return this.health += healthUp;
 		
+		
+		
+		
+		
+	}
+	
+	public int increaseBoredom(int adjustBoredom) {
+		this.boredom += adjustBoredom;
+		
+		return boredom;
+		
+	
+	}
+	public int increaseHunger(int hungerUp) {
+		
+		return this.hunger += hungerUp;
+		
+		
+		
+	}
+	
+	public int increaseCleanliness(int cleanlinessUp) {
+		this.cleanliness += cleanlinessUp;
+		
+		return cleanliness;
 	}
 	
 	@Override 
