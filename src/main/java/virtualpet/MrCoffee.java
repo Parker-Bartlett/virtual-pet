@@ -65,6 +65,8 @@ public class MrCoffee extends RoboticPet {
 			break;
 			
 		}
+		
+		return 0;
 }
 
 
