@@ -10,7 +10,7 @@ public class Application {
 		VirtualPetShelter shelter = new VirtualPetShelter();
 		VirtualPet testPetOne = new Dog("BoBo");
 		shelter.addPet(testPetOne);
-		VirtualPet testPetTwo = new OrganicPet("FroDo");
+		VirtualPet testPetTwo = new Cat("FroDo");
 		shelter.addPet(testPetTwo);
 		VirtualPet testPetThree = new RoboticPet("ToDo");
 		shelter.addPet(testPetThree);

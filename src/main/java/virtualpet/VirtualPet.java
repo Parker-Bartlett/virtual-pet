@@ -92,25 +92,27 @@ public abstract class VirtualPet {
 		}
 	}
 
-	public void increaseHealth(int healthUp) {
-		this.health += healthUp;
+	public int increaseHealth(int healthUp) {
+		return this.health += healthUp;
+		
+		
 		
 		
 		
 	}
 	
-	public void increaseBoredom(int adjustBoredom) {
+	public int increaseBoredom(int adjustBoredom) {
 		this.boredom += adjustBoredom;
 		
-		//boredom += 5;
+		return boredom;
 		
 	
 	}
 	public int increaseHunger(int hungerUp) {
 		
-		this.hunger += hungerUp;
+		return this.hunger += hungerUp;
 		
-		return hunger;
+		
 		
 	}
 	

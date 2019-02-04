@@ -16,7 +16,7 @@ public class RoboticPet extends VirtualPet {
 
 	public int lubricate() {
 		lubrication += 5;
-		super.increaseHealth();
+		super.increaseHealth(lubrication);
 		return lubrication;
 	}
 
@@ -36,4 +36,11 @@ public class RoboticPet extends VirtualPet {
 		}
 		this.reducesHealthWhen0();
 	}
+	public int increaseLubrication(int lubeUp) {
+		this.lubrication += lubeUp;
+
+		return lubrication;
+		
+	}
+	
 }
