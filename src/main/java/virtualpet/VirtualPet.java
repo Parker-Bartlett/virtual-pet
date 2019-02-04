@@ -93,4 +93,9 @@ public abstract class VirtualPet {
 		health += 5;
 		
 	}
+	
+	@Override 
+	public String toString() {
+		return "\nName: " + name;
+	}
 }

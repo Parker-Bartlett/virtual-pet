@@ -109,7 +109,7 @@ public class Application {
 	}
 
 	private static void multiPetInteraction(Scanner input, VirtualPetShelter shelter) {
-		System.out.println(shelter.listPets());
+		printAllPets(shelter);
 
 		boolean allAlive = true;
 		while (allAlive) {
@@ -132,7 +132,7 @@ public class Application {
 				shelter.cleanAll();
 				break;
 			case "5":
-				System.out.println(shelter.listPets());
+				printAllPets(shelter);
 				System.out.println("Which pet is being adopted?");
 				String adoptedPet = input.nextLine();
 				boolean answerIsNotExistingPet = true;
@@ -174,7 +174,7 @@ public class Application {
 
 	private static void singlePetInteraction(Scanner input, VirtualPetShelter shelter) {
 
-		System.out.println(shelter.listPets());
+		printAllPets(shelter);
 		System.out.println("Please choose a pet by their name.");
 		String petToGet = input.nextLine();
 		boolean answerIsNotExistingPet = true;
@@ -227,5 +227,9 @@ public class Application {
 			}
 
 		}
+		
+	}
+	public static void printAllPets(VirtualPetShelter petShelter) {
+		System.out.println(petShelter.getVirtualPets());
 	}
 }
