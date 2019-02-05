@@ -1,8 +1,8 @@
 package roboticpets;
 //change to Bender please.
-public class MegaZord extends RoboticPet {
+public class Bender extends RoboticPet {
 
-	public MegaZord(String name) {
+	public Bender(String name) {
 		super(name);
 		
 	}
