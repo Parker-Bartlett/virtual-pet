@@ -4,7 +4,6 @@ public class Dog extends OrganicPet {
 
 	public Dog(String name) {
 		super(name);
-
 	}
 
 	public void feedFancy() {
@@ -26,9 +25,6 @@ public class Dog extends OrganicPet {
 		increaseHunger(5);
 		increaseThirst(-5);
 		increaseCleanliness(-5);
-
-		System.out.println("Wow, great choice!  That cow femur will keep the dog entertained too!");
-
 	}
 
 	public void feedCat() {
@@ -38,8 +34,5 @@ public class Dog extends OrganicPet {
 		increaseBoredom(10);
 		increaseCleanliness(-20);
 
-		System.out.println("Your dog ate from the litter box...  It vomited and it has the runs...");
-		System.out.println(
-				"You need to clean it, it pooped on itself...  and its breath smells like cat poop so there's that...");
 	}
 }
