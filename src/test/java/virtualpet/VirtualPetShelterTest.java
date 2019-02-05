@@ -4,6 +4,10 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import organicpets.OrganicPet;
+import petshelter.VirtualPetShelter;
+import roboticpets.RoboticPet;
+
 public class VirtualPetShelterTest {
 	@Test
 	public void letsGoToTheShelter() {

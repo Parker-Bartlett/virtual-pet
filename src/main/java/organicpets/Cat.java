@@ -1,4 +1,4 @@
-package virtualpet;
+package organicpets;
 
 import java.util.Scanner;
 

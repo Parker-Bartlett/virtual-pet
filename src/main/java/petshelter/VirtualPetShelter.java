@@ -1,7 +1,11 @@
-package virtualpet;
+package petshelter;
 
 import java.util.Collection;
 import java.util.HashMap;
+
+import organicpets.OrganicPet;
+import roboticpets.RoboticPet;
+import virtualpet.VirtualPet;
 
 public class VirtualPetShelter {
 
