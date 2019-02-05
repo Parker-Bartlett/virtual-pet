@@ -2,7 +2,7 @@ package organicpets;
 
 import virtualpet.VirtualPet;
 
-public class OrganicPet extends VirtualPet {
+public abstract class OrganicPet extends VirtualPet {
 	
 	private int thirst;
 
