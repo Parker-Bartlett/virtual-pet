@@ -4,8 +4,11 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import organicpets.Cat;
+import organicpets.Dog;
 import organicpets.OrganicPet;
 import petshelter.VirtualPetShelter;
+import roboticpets.Bender;
 import roboticpets.RoboticPet;
 
 public class VirtualPetShelterTest {
@@ -25,7 +28,7 @@ public class VirtualPetShelterTest {
 	public void returnListofanimals() {
 		// act
 		VirtualPetShelter underTest = new VirtualPetShelter();
-		VirtualPet underTestDog = new OrganicPet("Booker");
+		VirtualPet underTestDog = new Dog("Booker");
 		underTest.addPet(underTestDog);
 		int size = underTest.getLength();
 
@@ -40,8 +43,8 @@ public class VirtualPetShelterTest {
 	public void shouldFeedAllPets() {
 		// arrange
 		VirtualPetShelter underTest = new VirtualPetShelter();
-		VirtualPet underTestDog = new OrganicPet("Booker");
-		VirtualPet underTestCat = new OrganicPet("Sam");
+		VirtualPet underTestDog = new Dog("Booker");
+		VirtualPet underTestCat = new Cat("Sam");
 		underTest.addPet(underTestDog);
 		underTest.addPet(underTestCat);
 
@@ -58,8 +61,8 @@ public class VirtualPetShelterTest {
 	public void shouldCleanAllPets() {
 		// arrange
 		VirtualPetShelter underTest = new VirtualPetShelter();
-		VirtualPet underTestDog = new OrganicPet("Booker");
-		VirtualPet underTestCat = new OrganicPet("Sam");
+		VirtualPet underTestDog = new Dog("Booker");
+		VirtualPet underTestCat = new Cat("Sam");
 		underTest.addPet(underTestDog);
 		underTest.addPet(underTestCat);
 
@@ -76,8 +79,8 @@ public class VirtualPetShelterTest {
 	public void shouldHydrateAllPets() {
 		// arrange
 		VirtualPetShelter underTest = new VirtualPetShelter();
-		VirtualPet underTestDog = new OrganicPet("Booker");
-		VirtualPet underTestCat = new RoboticPet("Sam");
+		VirtualPet underTestDog = new Dog("Booker");
+		VirtualPet underTestCat = new Bender("Sam");
 		underTest.addPet(underTestDog);
 		underTest.addPet(underTestCat);
 
@@ -94,8 +97,8 @@ public class VirtualPetShelterTest {
 	public void shouldPlayWithAllPets() {
 		// arrange
 		VirtualPetShelter underTest = new VirtualPetShelter();
-		VirtualPet underTestDog = new OrganicPet("Booker");
-		VirtualPet underTestCat = new OrganicPet("Sam");
+		VirtualPet underTestDog = new Dog("Booker");
+		VirtualPet underTestCat = new Cat("Sam");
 		underTest.addPet(underTestDog);
 		underTest.addPet(underTestCat);
 
@@ -111,8 +114,8 @@ public class VirtualPetShelterTest {
 	public void shouldTickAll() {
 		// arrange
 		VirtualPetShelter underTest = new VirtualPetShelter();
-		VirtualPet underTestDog = new OrganicPet("Booker");
-		VirtualPet underTestCat = new RoboticPet("Sam");
+		VirtualPet underTestDog = new Dog("Booker");
+		VirtualPet underTestCat = new Bender("Sam");
 		underTest.addPet(underTestDog);
 		underTest.addPet(underTestCat);
 		

@@ -2,7 +2,7 @@ package roboticpets;
 
 import virtualpet.VirtualPet;
 
-public class RoboticPet extends VirtualPet {
+public abstract class RoboticPet extends VirtualPet {
 
 	private int lubrication;
 

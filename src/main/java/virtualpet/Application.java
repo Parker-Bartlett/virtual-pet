@@ -27,7 +27,7 @@ public class Application {
 
 		System.out.println("    Welcome to <Pet Store Name>! \nWhat would you like to Name your pet?");
 		String name = input.nextLine();
-		VirtualPet introPet = new OrganicPet(name);
+		VirtualPet introPet = new Dog(name);
 		shelter.addPet(introPet);
 
 		System.out.println("Meet " + introPet.getName() + "!");
@@ -158,20 +158,21 @@ public class Application {
 					}
 				}
 				break;
-			case "6":
-				System.out.println("What is the new pets name?");
-				String petName = input.nextLine();
-				System.out.println("Is it organic or a robotic?");
-				String organicOrRobotic = input.nextLine();
-				if (organicOrRobotic.equalsIgnoreCase("organic")) {
-					VirtualPet addPet = new OrganicPet(petName);
-					shelter.addPet(addPet);
-				}
-				if (organicOrRobotic.equalsIgnoreCase("robotic")) {
-					VirtualPet addPet = new RoboticPet(petName);
-					shelter.addPet(addPet);
-				}
-				break;
+				////////////////////FIX THIS////////////////////////
+//			case "6":
+//				System.out.println("What is the new pets name?");
+//				String petName = input.nextLine();
+//				System.out.println("Is it organic or a robotic?");
+//				String organicOrRobotic = input.nextLine();
+//				if (organicOrRobotic.equalsIgnoreCase("organic")) {
+//					VirtualPet addPet = new OrganicPet(petName);
+//					shelter.addPet(addPet);
+//				}
+//				if (organicOrRobotic.equalsIgnoreCase("robotic")) {
+//					VirtualPet addPet = new RoboticPet(petName);
+//					shelter.addPet(addPet);
+//				}
+//				break;
 			case "7":
 				System.out.println(shelter.statusOfAllPets());
 				break;
