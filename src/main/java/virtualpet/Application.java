@@ -158,21 +158,35 @@ public class Application {
 					}
 				}
 				break;
-				////////////////////FIX THIS////////////////////////
-//			case "6":
-//				System.out.println("What is the new pets name?");
-//				String petName = input.nextLine();
-//				System.out.println("Is it organic or a robotic?");
-//				String organicOrRobotic = input.nextLine();
-//				if (organicOrRobotic.equalsIgnoreCase("organic")) {
-//					VirtualPet addPet = new OrganicPet(petName);
-//					shelter.addPet(addPet);
-//				}
-//				if (organicOrRobotic.equalsIgnoreCase("robotic")) {
-//					VirtualPet addPet = new RoboticPet(petName);
-//					shelter.addPet(addPet);
-//				}
-//				break;
+			//////////////////// FIX THIS////////////////////////
+			case "6":
+				System.out.println("What is the new pets name?");
+				String petName = input.nextLine();
+				System.out.println("Is a Dog, Cat, Bender, or Mr Coffee?");
+				boolean validPetType = true;
+				while (validPetType) {
+					String petType = input.nextLine();
+					if (petType.equalsIgnoreCase("Dog")) {
+						VirtualPet addPet = new Dog(petName);
+						shelter.addPet(addPet);
+						validPetType = false;
+					} else if (petType.equalsIgnoreCase("Cat")) {
+						VirtualPet addPet = new Cat(petName);
+						shelter.addPet(addPet);
+						validPetType = false;
+					} else if (petType.equalsIgnoreCase("Bender")) {
+						VirtualPet addPet = new Bender(petName);
+						shelter.addPet(addPet);
+						validPetType = false;
+					} else if (petType.equalsIgnoreCase("Mr Coffee")) {
+						VirtualPet addPet = new MrCoffee(petName);
+						shelter.addPet(addPet);
+						validPetType = false;
+					} else {
+						System.out.println("Please enter either Cat, Dog, Bender or Mr Coffee");
+					}
+				}
+				break;
 			case "7":
 				System.out.println(shelter.statusOfAllPets());
 				break;
@@ -230,7 +244,7 @@ public class Application {
 					if (activePet instanceof RoboticPet) {
 						((RoboticPet) activePet).getLubrication();
 					}
-				
+
 					break;
 				case "3":
 					activePet.play();
@@ -249,23 +263,24 @@ public class Application {
 			}
 
 		}
-		
+
 	}
+
 	public static void printAllPets(VirtualPetShelter petShelter) {
 		System.out.println(petShelter.getVirtualPets());
 	}
-	
+
 	public static void feedDog(VirtualPet dog) {
-		
+
 		Scanner input = new Scanner(System.in);
-		
+
 		System.out.println("What would you like to feed your dog?");
 		System.out.println("1. Fancy Feast \n2. Gravy Train\n3. Cow Femur with Peanut Butter\n4. Cat Poop");
-		
+
 		String userChoice = input.nextLine();
-		
+
 		switch (userChoice) {
-		
+
 		case "1":
 			((Dog) dog).feedFancy();
 		case "2":
@@ -276,18 +291,18 @@ public class Application {
 			((Dog) dog).feedCat();
 		}
 	}
-	
-public static void feedBender(VirtualPet bender) {
-		
+
+	public static void feedBender(VirtualPet bender) {
+
 		Scanner input = new Scanner(System.in);
-		
+
 		System.out.println("What would you like to feed your Bender?");
 		System.out.println("1. Beer \n2. Non-Alcoholic Beer\n3. Coins\n4. Entree from Elzar's");
-		
+
 		String userChoice = input.nextLine();
-		
+
 		switch (userChoice) {
-		
+
 		case "1":
 			System.out.println(((Bender) bender).beer());
 			break;
@@ -302,33 +317,32 @@ public static void feedBender(VirtualPet bender) {
 			break;
 		}
 	}
-	
-public static void feedMrCoffee(VirtualPet mrCoffee) {
-	
-	Scanner input = new Scanner(System.in);
-	
-	System.out.println("What would you like to feed Mr Coffee?");
-	System.out.println("1. Dark Roast \n2. Breakfast Blend\n3. Vinegar\n4. Souls of the Dead");
-	
-	String userChoice = input.nextLine();
-	
-	switch (userChoice) {
-	
-	case "1":
-		//((MrCoffee) mrCoffee).darkRoast();
-		System.out.println(((MrCoffee) mrCoffee).darkRoast());
-		break;
-	case "2":
-		System.out.println(((MrCoffee) mrCoffee).breakfastBlend());
-		break;
-	case "3":
-		System.out.println(((MrCoffee) mrCoffee).vinegar());
-		break;
-	case "4":
-		System.out.println(((MrCoffee) mrCoffee).soulsOfTheDead());
-		break;
+
+	public static void feedMrCoffee(VirtualPet mrCoffee) {
+
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("What would you like to feed Mr Coffee?");
+		System.out.println("1. Dark Roast \n2. Breakfast Blend\n3. Vinegar\n4. Souls of the Dead");
+
+		String userChoice = input.nextLine();
+
+		switch (userChoice) {
+
+		case "1":
+			// ((MrCoffee) mrCoffee).darkRoast();
+			System.out.println(((MrCoffee) mrCoffee).darkRoast());
+			break;
+		case "2":
+			System.out.println(((MrCoffee) mrCoffee).breakfastBlend());
+			break;
+		case "3":
+			System.out.println(((MrCoffee) mrCoffee).vinegar());
+			break;
+		case "4":
+			System.out.println(((MrCoffee) mrCoffee).soulsOfTheDead());
+			break;
+		}
 	}
-}
-	
-	
+
 }

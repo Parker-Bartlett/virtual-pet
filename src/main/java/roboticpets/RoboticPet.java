@@ -24,7 +24,7 @@ public abstract class RoboticPet extends VirtualPet {
 
 	public String printStats() {
 		String stats = "Robotic Pet - " + this.getName() + ": \nHunger:" + this.getHunger() + "\nLubrication:" + lubrication + "\nBoredom:" + this.getBoredom()
-				+ "\nCleanliness:" + this.getCleanliness() + "\nHealth:" + this.getHealth();
+				+ "\nCleanliness:" + this.getCleanliness() + "\nHealth:" + this.getHealth() + "\n";
 		return stats;
 
 	}
