@@ -208,7 +208,9 @@ public class Application {
 
 				switch (menuChoice) {
 				case "1":
-					activePet.feed();
+					if (activePet instanceof Dog) {
+						feedDog(activePet);
+					}
 					break;
 				case "2":
 					if (activePet instanceof OrganicPet) {
@@ -240,4 +242,29 @@ public class Application {
 	public static void printAllPets(VirtualPetShelter petShelter) {
 		System.out.println(petShelter.getVirtualPets());
 	}
+	
+	public static void feedDog(VirtualPet dog) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("What would you like to feed your dog?");
+		System.out.println("1. Fancy Feast \n2. Gravy Train\n3. Cow Femur with Peanut Butter\n4. Cat Poop");
+		
+		String userChoice = input.nextLine();
+		
+		switch (userChoice) {
+		
+		case "1":
+			((Dog) dog).feedFancy();
+		case "2":
+			((Dog) dog).feedGravy();
+		case "3":
+			((Dog) dog).feedCow();
+		case "4":
+			((Dog) dog).feedCat();
+		}
+	}
+	
+	
+	
 }
