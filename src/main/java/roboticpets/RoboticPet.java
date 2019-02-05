@@ -1,4 +1,6 @@
-package virtualpet;
+package roboticpets;
+
+import virtualpet.VirtualPet;
 
 public class RoboticPet extends VirtualPet {
 

@@ -1,4 +1,6 @@
-package virtualpet;
+package organicpets;
+
+import virtualpet.VirtualPet;
 
 public class OrganicPet extends VirtualPet {
 	

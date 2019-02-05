@@ -1,4 +1,4 @@
-package virtualpet;
+package roboticpets;
 
 public class Gundamn extends RoboticPet {
 

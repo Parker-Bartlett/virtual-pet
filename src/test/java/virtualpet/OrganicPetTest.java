@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import junit.framework.Assert;
+import organicpets.OrganicPet;
 
 public class OrganicPetTest {
 

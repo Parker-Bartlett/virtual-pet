@@ -1,4 +1,4 @@
-package virtualpet;
+package organicpets;
 
 public class Wookie extends OrganicPet {
 

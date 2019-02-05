@@ -3,6 +3,12 @@ package virtualpet;
 import java.awt.Toolkit;
 import java.util.Scanner;
 
+import organicpets.Cat;
+import organicpets.Dog;
+import organicpets.OrganicPet;
+import petshelter.VirtualPetShelter;
+import roboticpets.RoboticPet;
+
 public class Application {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
