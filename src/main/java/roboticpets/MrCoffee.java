@@ -8,14 +8,6 @@ public class MrCoffee extends RoboticPet {
 		super(name);
 		
 	}
-
-
-	
-	
-	
-	
-
-
 	
 	public String darkRoast() {
 		increaseHealth(5);
