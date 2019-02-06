@@ -25,7 +25,7 @@ public class Application {
 		VirtualPet testPetFour = new Bender("Flexo");
 		shelter.addPet(testPetFour);
 
-		System.out.println("    Welcome to <Pet Store Name>! \nWhat would you like to Name your pet?");
+		System.out.println("    Welcome to YouCanPetIT! \nWhat would you like to Name your pet?");
 		String name = input.nextLine();
 		VirtualPet introPet = new Dog(name);
 		shelter.addPet(introPet);
@@ -212,9 +212,9 @@ public class Application {
 
 			VirtualPet activePet = shelter.getPet(petToGet);
 
-			String hydrateOrLubricate = "hydrate";
+			String hydrateOrLubricate = "Hydrate";
 			if (activePet instanceof RoboticPet) {
-				hydrateOrLubricate = "lubricate";
+				hydrateOrLubricate = "Lubricate";
 			}
 
 			boolean isAlive = true;

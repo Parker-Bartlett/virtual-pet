@@ -1,14 +1,12 @@
 package roboticpets;
 
-import java.util.Scanner;
-
 public class MrCoffee extends RoboticPet {
-	
+
 	public MrCoffee(String name) {
 		super(name);
-		
+
 	}
-	
+
 	public String darkRoast() {
 		increaseHealth(5);
 		increaseBoredom(1);
@@ -17,11 +15,9 @@ public class MrCoffee extends RoboticPet {
 		increaseHunger(1);
 		String darkRoast = "Thank you for using the coffee maker.";
 		return darkRoast;
-		
-		
-		
-			}
-	
+
+	}
+
 	public String breakfastBlend() {
 		increaseHealth(4);
 		increaseBoredom(1);
@@ -30,10 +26,9 @@ public class MrCoffee extends RoboticPet {
 		increaseHunger(1);
 		String breakfastBlend = "Your coffee is ready.";
 		return breakfastBlend;
-		
-	
+
 	}
-	
+
 	public String vinegar() {
 		increaseHealth(10);
 		increaseBoredom(1);
@@ -43,7 +38,7 @@ public class MrCoffee extends RoboticPet {
 		String vinegar = "Your coffee maker is in in top operating condition.";
 		return vinegar;
 	}
-	
+
 	public String soulsOfTheDead() {
 		increaseHealth(500);
 		increaseBoredom(20);
@@ -52,16 +47,7 @@ public class MrCoffee extends RoboticPet {
 		increaseHunger(200);
 		String souls = "I AM THE DARK LORD JUAN VALDEZ AND I WILL DESTROY YOU AND YOUR KEURIG!";
 		return souls;
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
