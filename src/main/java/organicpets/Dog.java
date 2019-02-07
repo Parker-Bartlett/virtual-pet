@@ -35,4 +35,8 @@ public class Dog extends OrganicPet {
 		increaseCleanliness(-20);
 
 	}
+	@Override
+	public String toString() {
+		return "Type: Dog Name: " + this.getName() + "\n";
+	}
 }

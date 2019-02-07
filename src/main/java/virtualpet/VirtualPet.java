@@ -125,8 +125,10 @@ public abstract class VirtualPet {
 		return cleanliness;
 	}
 	
-	@Override 
-	public String toString() {
-		return "\nName: " + name;
-	}
+	
+	public abstract String toString();
+//	@Override 
+//	public String toString() {
+//		return "Type:" + this.getClass() + "\nName: " + name;
+//	}
 }

@@ -1,15 +1,13 @@
 package roboticpets;
+
 //change to Bender please.
 public class Bender extends RoboticPet {
 
 	public Bender(String name) {
 		super(name);
-		
+
 	}
 
-	
-	
-	
 	public String beer() {
 		increaseHealth(25);
 		increaseBoredom(20);
@@ -19,7 +17,7 @@ public class Bender extends RoboticPet {
 		String beer = "BEER IS GOOD!!!!!!!";
 		return beer;
 	}
-	
+
 	public String nonalcoholicBeer() {
 		increaseHealth(-10);
 		increaseBoredom(-20);
@@ -29,7 +27,7 @@ public class Bender extends RoboticPet {
 		String naBeer = "KISS MY SHINY METAL ASS!";
 		return naBeer;
 	}
-	
+
 	public String coins() {
 		increaseHealth(15);
 		increaseBoredom(50);
@@ -39,7 +37,7 @@ public class Bender extends RoboticPet {
 		String coins = "CHA-CHING!";
 		return coins;
 	}
-	
+
 	public String elzarsEntree() {
 		increaseHealth(25);
 		increaseBoredom(50);
@@ -48,39 +46,12 @@ public class Bender extends RoboticPet {
 		increaseHunger(50);
 		String entree = "THIS IS SOME GOOD EATIN'!";
 		return entree;
-		
+
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@Override
+	public String toString() {
+		return "Type: Bender Name: " + this.getName() + "\n";
+	}
+
 }

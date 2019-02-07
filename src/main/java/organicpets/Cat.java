@@ -38,5 +38,9 @@ public class Cat extends OrganicPet {
 		increaseCleanliness(20);
 
 	}
+	@Override
+	public String toString() {
+		return "Type: Cat Name: " + this.getName() + "\n";
+	}
 
 }
