@@ -319,9 +319,6 @@ public class Application {
 					if (activePet instanceof MrCoffee) {
 						feedMrCoffee(activePet);
 					}
-					if (activePet instanceof Cat) {
-						feedCat(activePet);
-					}
 					break;
 				case "2":
 					
