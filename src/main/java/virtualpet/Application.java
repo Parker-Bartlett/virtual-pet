@@ -377,7 +377,7 @@ public class Application {
 			System.out.println("Your pet caught and brutally killed that mouse we've been trying to catch for weeks!");
 			System.out.println("   ");
 			System.out.println(
-					"**************The following stats changed!**************\n              Health +25 \n              Fulfillment +30\n              Nourishment +25\n              Hydration -5 \n              Hygene -10");
+					"**************The following stats changed!**************\n              Health +25 \n              Fulfillment +30\n              Nourishment +25\n              Hydration -5 \n              Hygiene -10");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			((Cat) cat).feedMouse();
@@ -388,7 +388,7 @@ public class Application {
 					"Cat Nip...  Nice.  Your cat is stoned out of it's mind.\n  It has a bad case of the munchines, so it needs fed something else.\n However, it's been cleaning itself non-stop for like 15 minutes.  Weird.");
 			System.out.println("   ");
 			System.out.println(
-					"**************The following stats changed!**************\n              Health + 5 \n              Fulfillment +50\n              Nourishment -20\n              Hydration - 5 \n              Hygene +20");
+					"**************The following stats changed!**************\n              Health + 5 \n              Fulfillment +50\n              Nourishment -20\n              Hydration - 5 \n              Hygiene +20");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			((Cat) cat).feedNip();
@@ -435,7 +435,7 @@ public class Application {
 					"Cow femur?!  With peanut butter?! Where are you coming up with this stuff?!\n It's a bit messy, so your dog got a bit messy.");
 			System.out.println("   ");
 			System.out.println(
-					"**************The following stats changed!**************\n              Health +25 \n              Fulfillment +30\n              Nourishment +5\n              Hydration -5 \n              Hygene -5");
+					"**************The following stats changed!**************\n              Health +25 \n              Fulfillment +30\n              Nourishment +5\n              Hydration -5 \n              Hygiene -5");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			((Dog) dog).feedCow();
@@ -453,7 +453,7 @@ public class Application {
 					"Everyone in this room is now dumber for having observed you feeding a dog cat poop.\n I award you no points, and may God have mercy on your soul.");
 			System.out.println("   ");
 			System.out.println(
-					"**************The following stats changed!**************\n              Health -15 \n              Fulfillment +10\n              Nourishment -10\n              Hydration -5 \n              Hygene -20");
+					"**************The following stats changed!**************\n              Health -15 \n              Fulfillment +10\n              Nourishment -10\n              Hydration -5 \n              Hygiene -20");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			Toolkit.getDefaultToolkit().beep();
@@ -482,7 +482,7 @@ public class Application {
 			System.out.println("              Fulfillment +20");
 			System.out.println("              Lubrication +25");
 			System.out.println("              Nourishment +20");
-			System.out.println("              Hygene      -10");
+			System.out.println("              Hygiene      -10");
 			System.out.println("********************************************************");
 			((Bender) bender).beer();
 			Toolkit.getDefaultToolkit().beep();
@@ -494,7 +494,7 @@ public class Application {
 			System.out.println("              Fulfillment -20");
 			System.out.println("              Lubrication +10");
 			System.out.println("              Nourishment +10");
-			System.out.println("              Hygene      +10");
+			System.out.println("              Hygiene      +10");
 			System.out.println("********************************************************");
 			Toolkit.getDefaultToolkit().beep();
 			((Bender) bender).nonalcoholicBeer();
@@ -506,7 +506,7 @@ public class Application {
 			System.out.println("              Fulfillment +50");
 			System.out.println("              Lubrication -15");
 			System.out.println("              Nourishment +20");
-			System.out.println("              Hygene       --");
+			System.out.println("              Hygiene       --");
 			System.out.println("********************************************************");
 			((Bender) bender).coins();
 			Toolkit.getDefaultToolkit().beep();
@@ -518,7 +518,7 @@ public class Application {
 			System.out.println("              Fulfillment +50");
 			System.out.println("              Lubrication +35");
 			System.out.println("              Nourishment +50");
-			System.out.println("              Hygene      -30");
+			System.out.println("              Hygiene      -30");
 			System.out.println("********************************************************");
 			((Bender) bender).elzarsEntree();
 			Toolkit.getDefaultToolkit().beep();
@@ -546,7 +546,7 @@ public class Application {
 			System.out.println("              Fulfillment +1");
 			System.out.println("              Lubrication +1");
 			System.out.println("              Nourishment +1");
-			System.out.println("              Hygene      -3");
+			System.out.println("              Hygiene      -3");
 			System.out.println("********************************************************");
 			Toolkit.getDefaultToolkit().beep();
 			break;
@@ -562,7 +562,7 @@ public class Application {
 			System.out.println("              Fulfillment +1");
 			System.out.println("              Lubrication +1");
 			System.out.println("              Nourishment +1");
-			System.out.println("              Hygene      -3");
+			System.out.println("              Hygiene      -3");
 			System.out.println("********************************************************");
 			Toolkit.getDefaultToolkit().beep();
 			break;
@@ -574,7 +574,7 @@ public class Application {
 			System.out.println("              Fulfillment + 1");
 			System.out.println("              Lubrication +25");
 			System.out.println("              Nourishment + 1");
-			System.out.println("              Hygene      +10");
+			System.out.println("              Hygiene      +10");
 			System.out.println("********************************************************");
 			Toolkit.getDefaultToolkit().beep();
 			break;
@@ -595,7 +595,7 @@ public class Application {
 			System.out.println("              Fulfillment + 20");
 			System.out.println("              Lubrication + 25");
 			System.out.println("              Nourishment +200");
-			System.out.println("              Hygene      + 50");
+			System.out.println("              Hygiene      + 50");
 			System.out.println("********************************************************");
 			Toolkit.getDefaultToolkit().beep();
 			break;
