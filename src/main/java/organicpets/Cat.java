@@ -9,6 +9,7 @@ public class Cat extends OrganicPet {
 	public void feedFancy() {
 		increaseHealth(15);
 		increaseBoredom(10);
+		increaseHunger(15);
 	}
 	
 
@@ -17,6 +18,7 @@ public class Cat extends OrganicPet {
 		increaseBoredom(-10);
 		increaseHunger(-1);
 		increaseThirst(-1);
+
 	}
 		
 	public void feedMouse() {
@@ -25,6 +27,7 @@ public class Cat extends OrganicPet {
 		increaseHunger(25);
 		increaseThirst(-5);
 		increaseCleanliness(-10);
+
 	}
 	
 	public void feedNip() {
@@ -33,6 +36,7 @@ public class Cat extends OrganicPet {
 		increaseThirst(-5);
 		increaseBoredom(50);
 		increaseCleanliness(20);
+
 	}
 
 }
