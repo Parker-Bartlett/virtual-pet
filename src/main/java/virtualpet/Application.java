@@ -147,7 +147,7 @@ public class Application {
 		while (allAlive) {
 			System.out.println("**********************Activies**************************");
 			System.out.println(
-					"         1. Feed All\n         2. Hydrate and Lubricate All\n         3. Play With All\n         4. Clean All\n         5.  Adopt Out (get rid off)\n         6. Take in (create)\n         7. Display Status of Pets\n         8.  Exit to Main Menu");
+					"         1. Feed All\n         2. Hydrate and Lubricate All\n         3. Play With All\n         4. Clean All\n         5. Adopt Out (get rid off)\n         6. Take in (create)\n         7. Display Status of Pets\n         8. Exit to Main Menu");
 			System.out.println("********************************************************");
 			String menuChoice = input.nextLine();
 			shelter.tickAll();
@@ -157,24 +157,40 @@ public class Application {
 			case "1":
 				
 				// Insert status update *********************************************************************8
-				
+				System.out.println("**********************System Alert**********************");
+				System.out.println("          Well look at that!  You fed the pets.         ");
+				System.out.println("            I guess there is hope for you.              ");
+				System.out.println("********************************************************");
 				shelter.feedAll();
 				break;
 			case "2":
 				
 				// Insert status update *********************************************************************8
+				System.out.println("**********************System Alert**********************");
+				System.out.println("          All pets have been given water, or          ");
+				System.out.println("            lubricated...  Good for you.              ");
+				System.out.println("********************************************************");
+				
 				
 				shelter.hydrateAll();
 				break;
 			case "3":
 				
 				// Insert status update *********************************************************************8
-				
+				System.out.println("**********************System Alert**********************");
+				System.out.println("          Thanks for playing with the pets.              ");
+				System.out.println("   It did get a little weird when you were singing to\n the coffee maker.   ");
+				System.out.println("********************************************************");
 				shelter.playAll();
 				break;
 			case "4":
 				
 				// Insert status update *********************************************************************8
+				System.out.println("**********************System Alert**********************");
+				System.out.println("          All pets have been cleaned.  Great!         ");
+				System.out.println("            Looks like you need one too...\n          You smell like sadness and failure.              ");
+				System.out.println("********************************************************");
+				
 				
 				shelter.cleanAll();
 				break;
@@ -184,7 +200,8 @@ public class Application {
 				
 				printAllPets(shelter);
 				System.out.println("**********************Adoption**************************");
-				System.out.println("Which pet is being adopted?");
+				System.out.println("         Hey, one of the people at the bar wants\n           to adopt a pet.  They are fairly hammered");
+				System.out.println("             Which one are we giving away?");
 				System.out.println("********************************************************");
 				String adoptedPet = input.nextLine();
 				boolean answerIsNotExistingPet = true;
@@ -194,39 +211,55 @@ public class Application {
 						shelter.removePet(pet);
 						answerIsNotExistingPet = false;
 					} else {
-						System.out.println("Please enter an existing pets name:");
+						System.out.println("**********************System Alert**********************");
+						System.out.println("   Have you been drinking?  That doesn't appear to be");
+						System.out.println("            the name of a current pet.");
+						System.out.println("         Please enter an existing pets name:");
+						System.out.println("********************************************************");
 						adoptedPet = input.nextLine();
 					}
 				}
 				break;
 
 			case "6":
-				System.out.println("What is the new pets name?");
-				String petName = input.nextLine();
-				System.out.println("Is a Dog, Cat, Bender, or Mr Coffee?");
+				System.out.println("********************New Pet In Take*********************");
+				System.out.println("           Hey, there is a new pet coming in!");
+				System.out.println("           What are we going to name this pet?");
+				String petName = input.nextLine(); 
+				System.out.println("********************************************************");
+				System.out.println("         Please select the type of pet it is.");
+				System.out.println("                    1.  Dog\n                    2.  Cat\n                    3.  Bender\n                    4.  Mr.Coffee");
 				boolean validPetType = true;
 				while (validPetType) {
 					String petType = input.nextLine();
-					if (petType.equalsIgnoreCase("Dog")) {
+					if (petType.equalsIgnoreCase("1")) {
 						VirtualPet addPet = new Dog(petName);
+						System.out.println("A DOG!  YEAAAAAAA!  Just make sure it doesn't bite anyone.");
 						shelter.addPet(addPet);
 						validPetType = false;
-					} else if (petType.equalsIgnoreCase("Cat")) {
+					} else if (petType.equalsIgnoreCase("2")) {
 						VirtualPet addPet = new Cat(petName);
+						System.out.println("Great another animal to glare at me and judge me...  Sort of like my ex-wife.");
 						shelter.addPet(addPet);
 						validPetType = false;
-					} else if (petType.equalsIgnoreCase("Bender")) {
+					} else if (petType.equalsIgnoreCase("3")) {
 						VirtualPet addPet = new Bender(petName);
 						shelter.addPet(addPet);
+						System.out.println("A bender?  Crap, I'm going to have to run a beer tap to the shelter.");
 						validPetType = false;
-					} else if (petType.equalsIgnoreCase("Mr Coffee")) {
+					} else if (petType.equalsIgnoreCase("4")) {
 						VirtualPet addPet = new MrCoffee(petName);
 						shelter.addPet(addPet);
+						System.out.println("A coffee maker?  That's weird...");
 						validPetType = false;
 					} else {
-						System.out.println("Please enter either Cat, Dog, Bender or Mr Coffee");
+						System.out.println("Due to state regulations, we cannot classify that as a pet.  Please try again.");
+						System.out.println("               These are your options.");
+						System.out.println("                    1.  Dog\n                    2.  Cat\n                    3.  Bender\n                    4.  Mr.Coffee");
+						
 					}
 				}
+				System.out.println("********************************************************");
 				break;
 			case "7":
 				System.out.println(shelter.statusOfAllPets());
@@ -356,7 +389,7 @@ public class Application {
 			System.out.println("Cat's love the meaty taste of Fancy Feast!");
 			System.out.println("   ");
 			System.out.println(
-					"**************The following stats changed!**************\n          Health +15 \n          Fulfillment +10\n          Nourishment +15");
+					"***********The following have stats changed!************\n          Health +15 \n          Fulfillment +10\n          Nourishment +15");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			((Cat) cat).feedFancy();
@@ -367,7 +400,7 @@ public class Application {
 					"This is dog food.  DOG FOOD!  The cat stares at you with a mix of rage, disapointment and disgust.");
 			System.out.println("   ");
 			System.out.println(
-					"**************The following stats changed!**************\n              Health + 0 \n              Fulfillment -10\n              Nourishment - 1\n              Hydration - 1");
+					"***********The following have stats changed!************\n              Health + 0 \n              Fulfillment -10\n              Nourishment - 1\n              Hydration - 1");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			Toolkit.getDefaultToolkit().beep();
@@ -377,7 +410,11 @@ public class Application {
 			System.out.println("Your pet caught and brutally killed that mouse we've been trying to catch for weeks!");
 			System.out.println("   ");
 			System.out.println(
-					"**************The following stats changed!**************\n              Health +25 \n              Fulfillment +30\n              Nourishment +25\n              Hydration -5 \n              Hygiene -10");
+
+					"***********The following have stats changed!************\n              Health +25 \n              Fulfillment +30\n              Nourishment +25\n              Hydration -5 \n              Hygene -10");
+
+	
+
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			((Cat) cat).feedMouse();
@@ -388,7 +425,10 @@ public class Application {
 					"Cat Nip...  Nice.  Your cat is stoned out of it's mind.\n  It has a bad case of the munchines, so it needs fed something else.\n However, it's been cleaning itself non-stop for like 15 minutes.  Weird.");
 			System.out.println("   ");
 			System.out.println(
-					"**************The following stats changed!**************\n              Health + 5 \n              Fulfillment +50\n              Nourishment -20\n              Hydration - 5 \n              Hygiene +20");
+
+					"***********The following have stats changed!************\n              Health + 5 \n              Fulfillment +50\n              Nourishment -20\n              Hydration - 5 \n              Hygene +20");
+
+
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			((Cat) cat).feedNip();
@@ -414,7 +454,7 @@ public class Application {
 			System.out.println("That's not dog food...  But that's okay.");
 			System.out.println("   ");
 			System.out.println(
-					"**************The following stats changed!**************\n          Health +5 \n          Fulfillment +10\n          Nourishment +20");
+					"***********The following have stats changed!************\n          Health +5 \n          Fulfillment +10\n          Nourishment +20");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			((Dog) dog).feedFancy();
@@ -424,7 +464,7 @@ public class Application {
 			System.out.println("Gravy Train!  Now we're talking!");
 			System.out.println("   ");
 			System.out.println(
-					"**************The following stats changed!**************\n              Health +15 \n              Fulfillment +5\n              Nourishment +30\n              Hydration -2");
+					"***********The following have stats changed!************\n              Health +15 \n              Fulfillment +5\n              Nourishment +30\n              Hydration -2");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			Toolkit.getDefaultToolkit().beep();
@@ -435,7 +475,9 @@ public class Application {
 					"Cow femur?!  With peanut butter?! Where are you coming up with this stuff?!\n It's a bit messy, so your dog got a bit messy.");
 			System.out.println("   ");
 			System.out.println(
-					"**************The following stats changed!**************\n              Health +25 \n              Fulfillment +30\n              Nourishment +5\n              Hydration -5 \n              Hygiene -5");
+
+					"***********The following have stats changed!************\n              Health +25 \n              Fulfillment +30\n              Nourishment +5\n              Hydration -5 \n              Hygene -5");
+
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			((Dog) dog).feedCow();
@@ -453,7 +495,10 @@ public class Application {
 					"Everyone in this room is now dumber for having observed you feeding a dog cat poop.\n I award you no points, and may God have mercy on your soul.");
 			System.out.println("   ");
 			System.out.println(
-					"**************The following stats changed!**************\n              Health -15 \n              Fulfillment +10\n              Nourishment -10\n              Hydration -5 \n              Hygiene -20");
+
+					"***********The following have stats changed!************\n              Health -15 \n              Fulfillment +10\n              Nourishment -10\n              Hydration -5 \n              Hygene -20");
+          
+
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			Toolkit.getDefaultToolkit().beep();
@@ -477,7 +522,7 @@ public class Application {
 
 		case "1":
 			System.out.println(((Bender) bender).beer());
-			System.out.println("**************The following stats changed!**************");
+			System.out.println("***********The following have stats changed!************");
 			System.out.println("              Health      +25");
 			System.out.println("              Fulfillment +20");
 			System.out.println("              Lubrication +25");
@@ -489,7 +534,7 @@ public class Application {
 			break;
 		case "2":
 			System.out.println(((Bender) bender).nonalcoholicBeer());
-			System.out.println("**************The following stats changed!**************");
+			System.out.println("***********The following have stats changed!************");
 			System.out.println("              Health      -10");
 			System.out.println("              Fulfillment -20");
 			System.out.println("              Lubrication +10");
@@ -501,7 +546,7 @@ public class Application {
 			break;
 		case "3":
 			System.out.println(((Bender) bender).coins());
-			System.out.println("**************The following stats changed!**************");
+			System.out.println("***********The following have stats changed!************");
 			System.out.println("              Health      +15");
 			System.out.println("              Fulfillment +50");
 			System.out.println("              Lubrication -15");
@@ -513,7 +558,7 @@ public class Application {
 			break;
 		case "4":
 			System.out.println(((Bender) bender).elzarsEntree());
-			System.out.println("**************The following stats changed!**************");
+			System.out.println("***********The following have stats changed!************");
 			System.out.println("              Health      +25");
 			System.out.println("              Fulfillment +50");
 			System.out.println("              Lubrication +35");
@@ -541,7 +586,7 @@ public class Application {
 			// ((MrCoffee) mrCoffee).darkRoast();
 			System.out.println(((MrCoffee) mrCoffee).darkRoast());
 			System.out.println("A cup of dark roast was a great choice.");
-			System.out.println("**************The following stats changed!**************");
+			System.out.println("***********The following have stats changed!************");
 			System.out.println("              Health      +5");
 			System.out.println("              Fulfillment +1");
 			System.out.println("              Lubrication +1");
@@ -557,7 +602,7 @@ public class Application {
 			System.out.println(
 					"It takes me back to living in rural Wyoming, oh how peaceful that was to see the sunrise through the foggy trees.\n  That's where I met my first wife Lisa, we were married for 5 years until the accident.\n Ahem... I digress...");
 			input.nextLine();
-			System.out.println("**************The following stats changed!**************");
+			System.out.println("***********The following have stats changed!************");
 			System.out.println("              Health      +5");
 			System.out.println("              Fulfillment +1");
 			System.out.println("              Lubrication +1");
@@ -569,7 +614,7 @@ public class Application {
 		case "3":
 			System.out.println(((MrCoffee) mrCoffee).vinegar());
 
-			System.out.println("**************The following stats changed!**************");
+			System.out.println("***********The following have stats changed!************");
 			System.out.println("              Health      +10");
 			System.out.println("              Fulfillment + 1");
 			System.out.println("              Lubrication +25");
@@ -590,7 +635,7 @@ public class Application {
 
 			System.out.println("System Restored.");
 			input.nextLine();
-			System.out.println("**************The following stats changed!**************");
+			System.out.println("***********The following have stats changed!************");
 			System.out.println("              Health      +500");
 			System.out.println("              Fulfillment + 20");
 			System.out.println("              Lubrication + 25");
