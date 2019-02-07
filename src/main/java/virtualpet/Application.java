@@ -29,6 +29,8 @@ public class Application {
 		System.out.println("Before you can have a beer, you have to take care of all of these damn animals.");
 		System.out.println("Hey, look, there is a new arrival!  It's a dog!  It's not an impressive dog, but a dog nonetheless.");
 		System.out.println("So...  What's it's name?");
+
+>
 		String name = input.nextLine();
 		VirtualPet introPet = new Dog(name);
 		shelter.addPet(introPet);
@@ -189,7 +191,7 @@ public class Application {
 					}
 				}
 				break;
-			//////////////////// FIX THIS////////////////////////
+			
 			case "6":
 				System.out.println("What is the new pets name?");
 				String petName = input.nextLine();
@@ -261,6 +263,9 @@ public class Application {
 				case "1":
 					if (activePet instanceof Dog) {
 						feedDog(activePet);
+					}
+					if (activePet instanceof Cat) {
+						feedCat(activePet);
 					}
 					if (activePet instanceof Bender) {
 						feedBender(activePet);
@@ -417,6 +422,28 @@ public class Application {
 			Toolkit.getDefaultToolkit().beep();
 			((Dog) dog).feedCat();
 			break;
+		}
+	}
+	
+	public static void feedCat(VirtualPet cat) {
+
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("What would you like to feed your cat?");
+		System.out.println("1. Fancy Feast \n2. Gravy Train\n3. Mouse\n4. Cat Nip");
+
+		String userChoice = input.nextLine();
+
+		switch (userChoice) {
+
+		case "1":
+			((Cat) cat).feedFancy();
+		case "2":
+			((Cat) cat).feedGravy();
+		case "3":
+			((Cat) cat).feedMouse();
+		case "4":
+			((Cat) cat).feedNip();
 		}
 	}
 
