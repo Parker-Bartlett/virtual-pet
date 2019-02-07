@@ -40,52 +40,95 @@ public abstract class VirtualPet {
 
 	public int play() {
 		boredom += 5;
+		health += 5;
+		increaseHealth(10);
 		return boredom;
 	}
 
 	public int feed() {
 		hunger += 5;
+		health += 5;
+		increaseHealth(10);
 		return hunger;
 	}
 
 	public int clean() {
-		cleanliness += 5;
+		cleanliness += 20;
+		health += 5;
+		increaseHealth(10);
 		return cleanliness;
 	}
 	
 	public abstract void tick();
+	public abstract String check();
 	
 	public void tickSuperClassVariables() {
 		boredom -= 1;
 		hunger -= 1;
 		cleanliness -= 1;
+		health -= 4;
 	}
 	
-	public void tickHealth() {
-		health -= 25;
-	}
+	
 
-	public void reducesHealthWhen0() {
-		String lostHp = "Sorry your pet " + name + " has lost 25 health points!";
-
+	public String checkSuperClassVariables() {
+		String checkStatement = "";
 		if (hunger <= 0) {
-			health -= 25;
-			System.out.println(lostHp);
+			checkStatement += "Your pet " + name + " is starving, bruh.\nFeed it!";
+			hunger = 0;
 		}
 
 		if (boredom <= 0) {
-			health -= 25;
-			System.out.println(lostHp);
+			checkStatement += "Your pet " + name + " is bored.  This might lead to depression...\nPlay with it.";
+			boredom = 0;
 		}
 
 		if (cleanliness <= 0) {
-			health -= 25;
-			System.out.println(lostHp);
+			checkStatement += "What's that smell? It might be " + name + "...  Clean it.";
+			cleanliness = 0;
 		}
 
 		if (health <= 0) {
-			System.out.println("Sorry your pet " + name + " died!");
+			checkStatement += "Sorry your pet " + name + " died!";
 			System.exit(0);
 		}
+		return checkStatement;
 	}
+
+	public int increaseHealth(int healthUp) {
+		return this.health += healthUp;
+		
+		
+		
+		
+		
+	}
+	
+	public int increaseBoredom(int adjustBoredom) {
+		this.boredom += adjustBoredom;
+		
+		return boredom;
+		
+	
+	}
+	public int increaseHunger(int hungerUp) {
+		
+		return this.hunger += hungerUp;
+		
+		
+		
+	}
+	
+	public int increaseCleanliness(int cleanlinessUp) {
+		this.cleanliness += cleanlinessUp;
+		
+		return cleanliness;
+	}
+	
+	
+	public abstract String toString();
+//	@Override 
+//	public String toString() {
+//		return "Type:" + this.getClass() + "\nName: " + name;
+//	}
 }
