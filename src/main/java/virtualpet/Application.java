@@ -16,11 +16,11 @@ public class Application {
 		Scanner input = new Scanner(System.in);
 
 		VirtualPetShelter shelter = new VirtualPetShelter();
-		VirtualPet testPetOne = new Dog("BoBo");
+		VirtualPet testPetOne = new Dog("Spot");
 		shelter.addPet(testPetOne);
-		VirtualPet testPetTwo = new Cat("FroDo");
+		VirtualPet testPetTwo = new Cat("Fluffy");
 		shelter.addPet(testPetTwo);
-		VirtualPet testPetThree = new MrCoffee("ToDo");
+		VirtualPet testPetThree = new MrCoffee("Cuisinart");
 		shelter.addPet(testPetThree);
 		VirtualPet testPetFour = new Bender("Flexo");
 		shelter.addPet(testPetFour);
@@ -37,7 +37,7 @@ public class Application {
 
 		System.out.println("So " + introPet.getName() + " huh?  I guess that will be okay...");
 		System.out.println("************************Options*************************");
-		System.out.println("             1. Tutorial \n             2.  Start the game");
+		System.out.println("             1. Tutorial \n             2. Start the game");
 		System.out.println("********************************************************");
 		String choice = input.nextLine();
 
@@ -60,7 +60,7 @@ public class Application {
 					break;
 				}
 				((Dog) introPet).feed();
-				System.out.println("Your pet has been hydrated! Their hunger stat improved 5 points!");
+				System.out.println("Your pet has been fed! Their hunger stat improved 5 points!");
 				System.out.print("Your pet is thirsty! Hydrate it by pressing 2.");
 				petAction = input.nextLine();
 				while (!petAction.equals("2")) {
@@ -70,7 +70,7 @@ public class Application {
 					break;
 				}
 				((Dog) introPet).hydrate();
-				System.out.println("Your pet has been fed! Their hydration stat improved 5 points!");
+				System.out.println("Your pet has been hydrated! Their hydration stat improved 5 points!");
 				System.out.print("Your pet is bored! Play with it by pressing 3.");
 				petAction = input.nextLine();
 
@@ -95,9 +95,7 @@ public class Application {
 				System.out.println("************Achievement Unlocked: You have access to Robotic Pets***************");
 				System.out.println("I'm not sure if a coffee maker and a bender are considered pets... Hmmm. ");
 				System.out.println("********************************************************************************");
-				System.out.println(
-						"Inside the shelter you can take in both Organic and Robotic Pets\nIsn't that wonderful?");
-
+				
 				foo = false;
 				break;
 
@@ -113,7 +111,7 @@ public class Application {
 
 		// Intro to Game
 		System.out.println("Congratulations you have a happy and healthy pet! Lets get started!\n\n");
-
+		System.out.println("Inside the shelter you can take in both Organic and Robotic Pets\nIsn't that wonderful?");
 		boolean gameIsOn = true;
 		while (gameIsOn) {
 			// Main menu
@@ -157,18 +155,33 @@ public class Application {
 
 			switch (menuChoice) {
 			case "1":
+				
+				// Insert status update *********************************************************************8
+				
 				shelter.feedAll();
 				break;
 			case "2":
+				
+				// Insert status update *********************************************************************8
+				
 				shelter.hydrateAll();
 				break;
 			case "3":
+				
+				// Insert status update *********************************************************************8
+				
 				shelter.playAll();
 				break;
 			case "4":
+				
+				// Insert status update *********************************************************************8
+				
 				shelter.cleanAll();
 				break;
 			case "5":
+				
+				// Insert status update *********************************************************************8
+				
 				printAllPets(shelter);
 				System.out.println("**********************Adoption**************************");
 				System.out.println("Which pet is being adopted?");
@@ -243,6 +256,7 @@ public class Application {
 			String hydrateOrLubricate = "Hydrate";
 			if (activePet instanceof RoboticPet) {
 				hydrateOrLubricate = "Lubricate";
+
 			}
 
 			boolean isAlive = true;
@@ -257,6 +271,9 @@ public class Application {
 
 				switch (menuChoice) {
 				case "1":
+					
+	// Insert status update *********************************************************************8
+					
 					if (activePet instanceof Dog) {
 						feedDog(activePet);
 					}
@@ -274,6 +291,9 @@ public class Application {
 					}
 					break;
 				case "2":
+					
+// Insert status update *********************************************************************8				
+					
 					if (activePet instanceof OrganicPet) {
 						((OrganicPet) activePet).hydrate();
 					}
@@ -283,15 +303,29 @@ public class Application {
 
 					break;
 				case "3":
+					
+// Insert status update *********************************************************************8					
+					
 					activePet.play();
 					break;
 				case "4":
+					
+					
+// Insert status update *********************************************************************8
+					
 					activePet.clean();
 					break;
 				case "5":
+					
+// Insert status update *********************************************************************8
+					
 					System.out.println(activePet.printStats());
 					break;
 				case "6":
+					
+// Insert status update *********************************************************************8					
+					
+					
 					userMainMenu(input, shelter);
 					// isAlive = !isAlive;
 					break;
@@ -310,7 +344,7 @@ public class Application {
 
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("*********What would you like to feed your dog?**********");
+		System.out.println("*********What would you like to feed your cat?**********");
 		System.out.println("         1. Fancy Feast \n         2. Gravy Train\n         3. Mouse\n         4. Cat Nip");
 		System.out.println("********************************************************");
 
