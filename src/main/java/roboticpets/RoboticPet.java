@@ -38,7 +38,7 @@ public abstract class RoboticPet extends VirtualPet {
 		String checkStatement = "";
 		checkStatement += this.checkSuperClassVariables();
 		if (lubrication <= 0) {
-			checkStatement += "Your pet, "+this.getName()+"joints and such are seizing up.";
+			checkStatement += "Your pet, "+this.getName()+"joints and such are seizing up.\n";
 		}
 		return checkStatement;
 	}

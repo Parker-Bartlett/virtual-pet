@@ -54,7 +54,7 @@ public abstract class OrganicPet extends VirtualPet {
 		String checkStatement = "";
 		checkStatement += this.checkSuperClassVariables();
 		if (thirst <= 0) {
-			checkStatement += "Your pet," + this.getName() + " is dehydrated. Please Hydrated it.";
+			checkStatement += "Your pet," + this.getName() + " is dehydrated. Please Hydrated it.\n";
 		}
 		return checkStatement;
 	}

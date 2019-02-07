@@ -74,17 +74,17 @@ public abstract class VirtualPet {
 	public String checkSuperClassVariables() {
 		String checkStatement = "";
 		if (hunger <= 0) {
-			checkStatement += "Your pet " + name + " is starving, bruh.\nFeed it!";
+			checkStatement += "Your pet " + name + " is starving, bruh.\nFeed it!\n";
 			hunger = 0;
 		}
 
 		if (boredom <= 0) {
-			checkStatement += "Your pet " + name + " is bored.  This might lead to depression...\nPlay with it.";
+			checkStatement += "Your pet " + name + " is bored.  This might lead to depression...\nPlay with it.\n";
 			boredom = 0;
 		}
 
 		if (cleanliness <= 0) {
-			checkStatement += "What's that smell? It might be " + name + "...  Clean it.";
+			checkStatement += "What's that smell? It might be " + name + "...  Clean it.\n";
 			cleanliness = 0;
 		}
 

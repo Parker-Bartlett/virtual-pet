@@ -304,9 +304,6 @@ public class Application {
 
 				switch (menuChoice) {
 				case "1":
-					
-	// Insert status update *********************************************************************8
-					
 					if (activePet instanceof Dog) {
 						feedDog(activePet);
 					}
@@ -321,41 +318,27 @@ public class Application {
 					}
 					break;
 				case "2":
-					
-// Insert status update *********************************************************************8				
-					
 					if (activePet instanceof OrganicPet) {
 						((OrganicPet) activePet).hydrate();
+						System.out.println("AHHHHH Refreshing!!\n");
 					}
 					if (activePet instanceof RoboticPet) {
 						((RoboticPet) activePet).getLubrication();
+						System.out.println("AHHHH Soothing!!\n");
 					}
-
 					break;
 				case "3":
-					
-// Insert status update *********************************************************************8					
-					
 					activePet.play();
+					System.out.println("WooHoo Games are fun!\n");
 					break;
 				case "4":
-					
-					
-// Insert status update *********************************************************************8
-					
 					activePet.clean();
+					System.out.println("Squeaky Clean!\n");	
 					break;
 				case "5":
-					
-// Insert status update *********************************************************************8
-					
 					System.out.println(activePet.printStats());
 					break;
-				case "6":
-					
-// Insert status update *********************************************************************8					
-					
-					
+				case "6":					
 					userMainMenu(input, shelter);
 					// isAlive = !isAlive;
 					break;
