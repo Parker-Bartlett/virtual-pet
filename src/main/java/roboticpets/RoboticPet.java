@@ -18,7 +18,7 @@ public abstract class RoboticPet extends VirtualPet {
 
 	public int lubricate() {
 		lubrication += 5;
-		super.increaseHealth(lubrication);
+		super.increaseHealth(5);
 		return lubrication;
 	}
 

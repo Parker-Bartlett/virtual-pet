@@ -9,6 +9,7 @@ public class Cat extends OrganicPet {
 	public void feedFancy() {
 		increaseHealth(15);
 		increaseBoredom(10);
+		increaseHunger(15);
 	}
 	
 
@@ -17,8 +18,8 @@ public class Cat extends OrganicPet {
 		increaseBoredom(-10);
 		increaseHunger(-1);
 		increaseThirst(-1);
-		System.out.println("Cats do not eat Gravy Train, you imbecile...  ");
-		System.out.println("The cat did not eat it, it is now a bit irritated with you.  Maybe you should feed it something better and play with it.");
+		System.out.println(" ");
+		System.out.println("");
 	}
 		
 	public void feedMouse() {
@@ -27,7 +28,7 @@ public class Cat extends OrganicPet {
 		increaseHunger(25);
 		increaseThirst(-5);
 		increaseCleanliness(-10);
-		System.out.println("Wow, great choice! You let the cat go hunting! It is really happy!");
+		System.out.println("");
 	}
 	
 	public void feedNip() {
@@ -36,8 +37,8 @@ public class Cat extends OrganicPet {
 		increaseThirst(-5);
 		increaseBoredom(50);
 		increaseCleanliness(20);
-		System.out.println("The cat got into the cat nip...  Nice brah.");
-		System.out.println("It is high as ffffffuuuuudge.  It needs fed real food, it has the munchies hardcore.");
+		System.out.println("");
+		System.out.println("");
 	}
 
 }

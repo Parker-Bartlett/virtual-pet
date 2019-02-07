@@ -41,21 +41,21 @@ public abstract class VirtualPet {
 	public int play() {
 		boredom += 5;
 		health += 5;
-		increaseHealth(health);
+		increaseHealth(10);
 		return boredom;
 	}
 
 	public int feed() {
 		hunger += 5;
 		health += 5;
-		increaseHealth(health);
+		increaseHealth(10);
 		return hunger;
 	}
 
 	public int clean() {
-		cleanliness += 5;
+		cleanliness += 20;
 		health += 5;
-		increaseHealth(health);
+		increaseHealth(10);
 		return cleanliness;
 	}
 	

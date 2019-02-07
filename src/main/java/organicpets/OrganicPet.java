@@ -18,7 +18,7 @@ public abstract class OrganicPet extends VirtualPet {
 	
 	public int hydrate() {
 		thirst += 5;
-		super.increaseHealth(thirst);
+		super.increaseHealth(5);
 		return thirst;
 		
 	}
