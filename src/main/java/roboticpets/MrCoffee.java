@@ -50,4 +50,8 @@ public class MrCoffee extends RoboticPet {
 
 	}
 
+	@Override
+	public String toString() {
+		return "Type: MrCoffee Name: " + this.getName() + "\n";
+	}
 }
