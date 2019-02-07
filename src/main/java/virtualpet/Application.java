@@ -24,13 +24,13 @@ public class Application {
 		shelter.addPet(testPetThree);
 		VirtualPet testPetFour = new Bender("Flexo");
 		shelter.addPet(testPetFour);
-		
+
 		System.out.println("********************   Welcome to The Old North Pet Shelter and Bar! ********************");
 		System.out.println("Before you can have a beer, you have to take care of all of these damn animals.");
-		System.out.println("Hey, look, there is a new arrival!  It's a dog!  It's not an impressive dog, but a dog nonetheless.");
+		System.out.println(
+				"Hey, look, there is a new arrival!  It's a dog!  It's not an impressive dog, but a dog nonetheless.");
 		System.out.println("So...  What's it's name?");
 
->
 		String name = input.nextLine();
 		VirtualPet introPet = new Dog(name);
 		shelter.addPet(introPet);
@@ -49,61 +49,54 @@ public class Application {
 					introPet.tick();
 				}
 
-				System.out.println(
-						"Okay rookie, Let's go over the basics here at the bar... and shelter.");
-				
-				
+				System.out.println("Okay rookie, Let's go over the basics here at the bar... and shelter.");
+
 				System.out.print("Your pet is hungry! Feed it by pressing 1.");
 				petAction = input.nextLine();
-					while(!petAction.equals("1")) {
-					
+				while (!petAction.equals("1")) {
+
 					System.out.println("Invalid option, please press 1");
 					petAction = input.nextLine();
 					break;
-					}
-					((Dog)introPet).feed();
-					System.out.println("Your pet has been hydrated! Their hunger stat improved 5 points!");
+				}
+				((Dog) introPet).feed();
+				System.out.println("Your pet has been hydrated! Their hunger stat improved 5 points!");
 				System.out.print("Your pet is thirsty! Hydrate it by pressing 2.");
 				petAction = input.nextLine();
-					while(!petAction.equals("2")) {
-				
+				while (!petAction.equals("2")) {
+
 					System.out.println("Invalid option, please press 2.");
 					petAction = input.nextLine();
 					break;
-					}
-					((Dog) introPet).hydrate();
-					System.out.println("Your pet has been fed! Their hydration stat improved 5 points!");
+				}
+				((Dog) introPet).hydrate();
+				System.out.println("Your pet has been fed! Their hydration stat improved 5 points!");
 				System.out.print("Your pet is bored! Play with it by pressing 3.");
 				petAction = input.nextLine();
-				
-				while(!petAction.equals("3")) {
+
+				while (!petAction.equals("3")) {
 					System.out.println("Invalid option, please press 3.");
 					petAction = input.nextLine();
 					break;
 				}
 				introPet.play();
 				System.out.println("Your pet has been entertained! Their fulfillment stat improved 5 points!");
-				
-				
+
 				System.out.print("Your pet is dirty! Clean it by pressing 4.");
 				petAction = input.nextLine();
-				while(!petAction.equals("4")) {
+				while (!petAction.equals("4")) {
 					System.out.println("Invalid option, please press 4.");
 					petAction = input.nextLine();
 				}
 				introPet.clean();
 				System.out.println("Your pet has been cleansed! Their cleanliness stat improved 5 points!");
 				Toolkit.getDefaultToolkit().beep();
-				
-					
-					System.out.println(
-							"************Achievement Unlocked: You have access to Robotic Pets***************");
-					System.out.println("I'm not sure if a coffee maker and a bender are considered pets... Hmmm. ");
-					System.out.println(
-							"********************************************************************************");
-					System.out.println(
-							"Inside the shelter you can take in both Organic and Robotic Pets\nIsn't that wonderful?");
-				
+
+				System.out.println("************Achievement Unlocked: You have access to Robotic Pets***************");
+				System.out.println("I'm not sure if a coffee maker and a bender are considered pets... Hmmm. ");
+				System.out.println("********************************************************************************");
+				System.out.println(
+						"Inside the shelter you can take in both Organic and Robotic Pets\nIsn't that wonderful?");
 
 				foo = false;
 				break;
@@ -130,7 +123,8 @@ public class Application {
 
 	private static void userMainMenu(Scanner input, VirtualPetShelter shelter) {
 		System.out.println("***********************Main Menu************************");
-		System.out.println("             1. Single Pet Interaction \n             2. Go to the shelter \n             3. Exit");
+		System.out.println(
+				"             1. Single Pet Interaction \n             2. Go to the shelter \n             3. Exit");
 		System.out.println("********************************************************");
 		String menuChoice = input.nextLine();
 		switch (menuChoice) {
@@ -154,7 +148,8 @@ public class Application {
 		boolean allAlive = true;
 		while (allAlive) {
 			System.out.println("**********************Activies**************************");
-			System.out.println("         1. Feed All\n         2. Hydrate and Lubricate All\n         3. Play With All\n         4. Clean All\n         5.  Adopt Out (get rid off)\n         6. Take in (create)\n         7. Display Status of Pets\n         8.  Exit to Main Menu");
+			System.out.println(
+					"         1. Feed All\n         2. Hydrate and Lubricate All\n         3. Play With All\n         4. Clean All\n         5.  Adopt Out (get rid off)\n         6. Take in (create)\n         7. Display Status of Pets\n         8.  Exit to Main Menu");
 			System.out.println("********************************************************");
 			String menuChoice = input.nextLine();
 			shelter.tickAll();
@@ -191,7 +186,7 @@ public class Application {
 					}
 				}
 				break;
-			
+
 			case "6":
 				System.out.println("What is the new pets name?");
 				String petName = input.nextLine();
@@ -253,7 +248,8 @@ public class Application {
 			boolean isAlive = true;
 			while (isAlive) {
 				System.out.println("**********************Activies**************************");
-				System.out.println("         1. Feed \n         2. " + hydrateOrLubricate + "\n         3. Play \n         4. Clean \n         5. Check Status \n         6. Exit");
+				System.out.println("         1. Feed \n         2. " + hydrateOrLubricate
+						+ "\n         3. Play \n         4. Clean \n         5. Check Status \n         6. Exit");
 				System.out.println("********************************************************");
 				String menuChoice = input.nextLine();
 				activePet.tick();
@@ -309,7 +305,7 @@ public class Application {
 	public static void printAllPets(VirtualPetShelter petShelter) {
 		System.out.println(petShelter.getVirtualPets());
 	}
-	
+
 	public static void feedCat(VirtualPet cat) {
 
 		Scanner input = new Scanner(System.in);
@@ -325,16 +321,19 @@ public class Application {
 		case "1":
 			System.out.println("Cat's love the meaty taste of Fancy Feast!");
 			System.out.println("   ");
-			System.out.println("**************The following stats changed!**************\n          Health +15 \n          Fulfillment +10\n          Nourishment +15");
+			System.out.println(
+					"**************The following stats changed!**************\n          Health +15 \n          Fulfillment +10\n          Nourishment +15");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			((Cat) cat).feedFancy();
 			Toolkit.getDefaultToolkit().beep();
 			break;
 		case "2":
-			System.out.println("This is dog food.  DOG FOOD!  The cat stares at you with a mix of rage, disapointment and disgust.");
+			System.out.println(
+					"This is dog food.  DOG FOOD!  The cat stares at you with a mix of rage, disapointment and disgust.");
 			System.out.println("   ");
-			System.out.println("**************The following stats changed!**************\n              Health + 0 \n              Fulfillment -10\n              Nourishment - 1\n              Hydration - 1");
+			System.out.println(
+					"**************The following stats changed!**************\n              Health + 0 \n              Fulfillment -10\n              Nourishment - 1\n              Hydration - 1");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			Toolkit.getDefaultToolkit().beep();
@@ -343,16 +342,19 @@ public class Application {
 		case "3":
 			System.out.println("Your pet caught and brutally killed that mouse we've been trying to catch for weeks!");
 			System.out.println("   ");
-			System.out.println("**************The following stats changed!**************\n              Health +25 \n              Fulfillment +30\n              Nourishment +25\n              Hydration -5 \n              Hygene -10");
+			System.out.println(
+					"**************The following stats changed!**************\n              Health +25 \n              Fulfillment +30\n              Nourishment +25\n              Hydration -5 \n              Hygene -10");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			((Cat) cat).feedMouse();
 			Toolkit.getDefaultToolkit().beep();
 			break;
 		case "4":
-			System.out.println("Cat Nip...  Nice.  Your cat is stoned out of it's mind.\n  It has a bad case of the munchines, so it needs fed something else.\n However, it's been cleaning itself non-stop for like 15 minutes.  Weird.");
+			System.out.println(
+					"Cat Nip...  Nice.  Your cat is stoned out of it's mind.\n  It has a bad case of the munchines, so it needs fed something else.\n However, it's been cleaning itself non-stop for like 15 minutes.  Weird.");
 			System.out.println("   ");
-			System.out.println("**************The following stats changed!**************\n              Health + 5 \n              Fulfillment +50\n              Nourishment -20\n              Hydration - 5 \n              Hygene +20");
+			System.out.println(
+					"**************The following stats changed!**************\n              Health + 5 \n              Fulfillment +50\n              Nourishment -20\n              Hydration - 5 \n              Hygene +20");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			((Cat) cat).feedNip();
@@ -361,19 +363,13 @@ public class Application {
 		}
 	}
 
-	
-	
-	
-	
-	
-	
-
 	public static void feedDog(VirtualPet dog) {
 
 		Scanner input = new Scanner(System.in);
 
 		System.out.println("*********What would you like to feed your dog?**********");
-		System.out.println("         1. Fancy Feast \n         2. Gravy Train\n         3. Cow Femur with Peanut Butter\n         4. Cat Poop");
+		System.out.println(
+				"         1. Fancy Feast \n         2. Gravy Train\n         3. Cow Femur with Peanut Butter\n         4. Cat Poop");
 		System.out.println("********************************************************");
 
 		String userChoice = input.nextLine();
@@ -383,7 +379,8 @@ public class Application {
 		case "1":
 			System.out.println("That's not dog food...  But that's okay.");
 			System.out.println("   ");
-			System.out.println("**************The following stats changed!**************\n          Health +5 \n          Fulfillment +10\n          Nourishment +20");
+			System.out.println(
+					"**************The following stats changed!**************\n          Health +5 \n          Fulfillment +10\n          Nourishment +20");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			((Dog) dog).feedFancy();
@@ -392,16 +389,19 @@ public class Application {
 		case "2":
 			System.out.println("Gravy Train!  Now we're talking!");
 			System.out.println("   ");
-			System.out.println("**************The following stats changed!**************\n              Health +15 \n              Fulfillment +5\n              Nourishment +30\n              Hydration -2");
+			System.out.println(
+					"**************The following stats changed!**************\n              Health +15 \n              Fulfillment +5\n              Nourishment +30\n              Hydration -2");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			Toolkit.getDefaultToolkit().beep();
 			((Dog) dog).feedGravy();
 			break;
 		case "3":
-			System.out.println("Cow femur?!  With peanut butter?! Where are you coming up with this stuff?!\n It's a bit messy, so your dog got a bit messy.");
+			System.out.println(
+					"Cow femur?!  With peanut butter?! Where are you coming up with this stuff?!\n It's a bit messy, so your dog got a bit messy.");
 			System.out.println("   ");
-			System.out.println("**************The following stats changed!**************\n              Health +25 \n              Fulfillment +30\n              Nourishment +5\n              Hydration -5 \n              Hygene -5");
+			System.out.println(
+					"**************The following stats changed!**************\n              Health +25 \n              Fulfillment +30\n              Nourishment +5\n              Hydration -5 \n              Hygene -5");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			((Dog) dog).feedCow();
@@ -412,38 +412,19 @@ public class Application {
 			input.nextLine();
 			System.out.println("Seriously?  Cat poop?!");
 			input.nextLine();
-			System.out.println("What you've just done is on of the most insanely idiotic things I have ever observed. \nAt no point has your decision came anywhere close to helping the overall health of your pet.");
+			System.out.println(
+					"What you've just done is on of the most insanely idiotic things I have ever observed. \nAt no point has your decision came anywhere close to helping the overall health of your pet.");
 			input.nextLine();
-			System.out.println("Everyone in this room is now dumber for having observed you feeding a dog cat poop.\n I award you no points, and may God have mercy on your soul.");
+			System.out.println(
+					"Everyone in this room is now dumber for having observed you feeding a dog cat poop.\n I award you no points, and may God have mercy on your soul.");
 			System.out.println("   ");
-			System.out.println("**************The following stats changed!**************\n              Health -15 \n              Fulfillment +10\n              Nourishment -10\n              Hydration -5 \n              Hygene -20");
+			System.out.println(
+					"**************The following stats changed!**************\n              Health -15 \n              Fulfillment +10\n              Nourishment -10\n              Hydration -5 \n              Hygene -20");
 			System.out.println("********************************************************");
 			System.out.println("   ");
 			Toolkit.getDefaultToolkit().beep();
 			((Dog) dog).feedCat();
 			break;
-		}
-	}
-	
-	public static void feedCat(VirtualPet cat) {
-
-		Scanner input = new Scanner(System.in);
-
-		System.out.println("What would you like to feed your cat?");
-		System.out.println("1. Fancy Feast \n2. Gravy Train\n3. Mouse\n4. Cat Nip");
-
-		String userChoice = input.nextLine();
-
-		switch (userChoice) {
-
-		case "1":
-			((Cat) cat).feedFancy();
-		case "2":
-			((Cat) cat).feedGravy();
-		case "3":
-			((Cat) cat).feedMouse();
-		case "4":
-			((Cat) cat).feedNip();
 		}
 	}
 
@@ -452,7 +433,8 @@ public class Application {
 		Scanner input = new Scanner(System.in);
 
 		System.out.println("*******What would you like to feed your Bender?*********");
-		System.out.println("       1. Beer \n       2. Non-Alcoholic Beer\n       3. Coins\n       4. Entree from Elzar's");
+		System.out.println(
+				"       1. Beer \n       2. Non-Alcoholic Beer\n       3. Coins\n       4. Entree from Elzar's");
 		System.out.println("********************************************************");
 
 		String userChoice = input.nextLine();
@@ -468,7 +450,7 @@ public class Application {
 			System.out.println("              Nourishment +20");
 			System.out.println("              Hygene      -10");
 			System.out.println("********************************************************");
-			((Bender)bender).beer();
+			((Bender) bender).beer();
 			Toolkit.getDefaultToolkit().beep();
 			break;
 		case "2":
@@ -481,7 +463,7 @@ public class Application {
 			System.out.println("              Hygene      +10");
 			System.out.println("********************************************************");
 			Toolkit.getDefaultToolkit().beep();
-			((Bender)bender).nonalcoholicBeer();
+			((Bender) bender).nonalcoholicBeer();
 			break;
 		case "3":
 			System.out.println(((Bender) bender).coins());
@@ -492,7 +474,7 @@ public class Application {
 			System.out.println("              Nourishment +20");
 			System.out.println("              Hygene       --");
 			System.out.println("********************************************************");
-			((Bender)bender).coins();
+			((Bender) bender).coins();
 			Toolkit.getDefaultToolkit().beep();
 			break;
 		case "4":
@@ -504,7 +486,7 @@ public class Application {
 			System.out.println("              Nourishment +50");
 			System.out.println("              Hygene      -30");
 			System.out.println("********************************************************");
-			((Bender)bender).elzarsEntree();
+			((Bender) bender).elzarsEntree();
 			Toolkit.getDefaultToolkit().beep();
 			break;
 		}
@@ -538,7 +520,8 @@ public class Application {
 			System.out.println(((MrCoffee) mrCoffee).breakfastBlend());
 			System.out.println("A cup of breakfast blend is perfect for at time like this.");
 			input.nextLine();
-			System.out.println("It takes me back to living in rural Wyoming, oh how peaceful that was to see the sunrise through the foggy trees.\n  That's where I met my first wife Lisa, we were married for 5 years until the accident.\n Ahem... I digress...");
+			System.out.println(
+					"It takes me back to living in rural Wyoming, oh how peaceful that was to see the sunrise through the foggy trees.\n  That's where I met my first wife Lisa, we were married for 5 years until the accident.\n Ahem... I digress...");
 			input.nextLine();
 			System.out.println("**************The following stats changed!**************");
 			System.out.println("              Health      +5");
@@ -551,7 +534,7 @@ public class Application {
 			break;
 		case "3":
 			System.out.println(((MrCoffee) mrCoffee).vinegar());
-			
+
 			System.out.println("**************The following stats changed!**************");
 			System.out.println("              Health      +10");
 			System.out.println("              Fulfillment + 1");
@@ -570,7 +553,7 @@ public class Application {
 			input.nextLine();
 			System.out.println("Debugging - Press Enter to Continue");
 			input.nextLine();
-			
+
 			System.out.println("System Restored.");
 			input.nextLine();
 			System.out.println("**************The following stats changed!**************");
